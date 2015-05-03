@@ -1,0 +1,17 @@
+Title: Quentin Vasseur - Portfolio
+
+----
+
+Author: Lucas Fayolle
+
+----
+
+Description: Portfolio de Quentin Vasseur
+
+----
+
+Keywords: portfolio,fashion,design,graphic,collection,sneakers,illustrations
+
+----
+
+Copyright: © 2009-(date: Year) (link: http://getkirby.com text: Kirby)
