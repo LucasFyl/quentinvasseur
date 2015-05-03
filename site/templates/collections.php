@@ -21,7 +21,7 @@
         </div>
         <div id="content" class="collections">
             <!-- <h1>quentin&nbsp;vasseur</h1> -->
-            <a href="../" class='back-link'><i class="icon-arrow_left"></i></a>
+            <a href="./" class='back-link'><i class="icon-arrow_left"></i></a>
             <nav>
                 <ul>
                     <?php foreach($pages->find('work/collections')->children()->visible() as $wo): ?>
@@ -46,7 +46,8 @@
             $(document).ready(function(){
                 var tlCollections = new TimelineMax({paused:true});
 
-                tlCollections.set('#intro .text-fill', {top:'0',left:'280px',scale:0.5,marginTop:'-10px',color:"rgba(255,255,255,0.8)",width:'979px'})
+            
+                tlCollections.set('#intro .text-fill', {opacity:0,width:'979px',top:'0',left:'280px',scale:0.5,marginTop:'-10px'})
                              .set('#intro ', {height:'auto'})
                              .staggerTo('nav>ul>li', 0.55, {opacity:1,y:'0',x:'0',ease:Power3.easeOut,delay:0.25}, -0.15)
                              .to('#intro .text-fill', 0.5, {color:'#ffffff',ease:Power3.easeInOut});

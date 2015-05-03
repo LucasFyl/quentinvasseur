@@ -30,6 +30,14 @@
                     <li><a href="about">about</a><span></span></li>
                     <li><a href="work/sneakers">sneakers</a><span></span></li>
                 </ul>
+                <div class="box">
+                    <div class="vertical v-1 white-bar"></div>
+                    <div class="vertical v-2 white-bar"></div>
+                    <div class="vertical v-3 white-bar"></div>
+                    <div class="horizontal h-1 white-bar"></div>
+                    <div class="horizontal h-2 white-bar"></div>
+                    <div class="horizontal h-3 white-bar"></div>
+                </div>
             </nav>
         </div>
         <!-- <div class="background"></div> -->
@@ -52,11 +60,15 @@
                 var animIntro = new TimelineMax({paused:true});
                 animIntro.set('#intro > div:nth-child(2)', {opacity:0,delay:1.9})
                          .set('#intro .empty', {display:'none'})
+                         .set('.vertical', {opacity:0,height:0})
+                         .set('.horizontal', {opacity:0,width:0})
                          .to('#intro .text-fill', 1.2, {top:'0',left:'280px',scale:0.5,marginTop:'-10px',ease:Power4.easeOut})
                          .set('#intro ', {height:'auto'})
-                         .staggerTo('nav>ul>li', 0.25, {opacity:1,y:'0',x:'0',ease:Power3.easeOut,delay:0.25}, -0.15)
-                         .to('#intro .text-fill', 0.5, {color:'#ffffff',ease:Power3.easeInOut})
-                         // .to('#intro .text-fill', 0.25, {textShadow:"0px 0px 15px rgba(255, 255, 255, .6)",ease:Power3.easeOut})
+                         .staggerTo(['nav>ul>*'], 1, {opacity:1,y:'0',x:'0',ease:Power3.easeOut}, -0.25, "+=0.25")
+                         .to('.white-bar', 0.33, {opacity:1,ease:Power3.easeOut}, "-=0.5" )
+                         .to('.vertical', 1, {height:'100%',ease:Power3.easeOut},"-=0.5")
+                         .to('.horizontal', 1, {width:'100%',ease:Power3.easeOut}, "-=1")
+                         .to('#intro .text-fill', 0.7, {color:'#ffffff',ease:Power3.easeInOut})
                          ;
                 animIntro.play();
             });

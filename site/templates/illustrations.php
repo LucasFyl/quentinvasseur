@@ -21,7 +21,7 @@
         </div>
         <div id="content" class="illustrations">
             <!-- <h1>quentin&nbsp;vasseur</h1> -->
-            <a href="./" class='back-link'></a>
+            <a href="./" class='back-link'><i class="icon-arrow_left"></i></a>
             <nav>
                 <ul>
                     <?php foreach($pages->find('work/illustrations')->children()->visible() as $wo): ?>
@@ -40,9 +40,10 @@
         <script>
             $(document).ready(function(){
                 TweenMax.set('nav>ul>li', {opacity:0,y:'-100'});
-                TweenMax.set('#intro .text-fill', {top:'0',left:'280px',scale:0.5,marginTop:'-10px',ease:Power4.easeOut});
+                TweenMax.set('#intro .text-fill', {width:'100%',top:'0',left:'280px',scale:0.5,marginTop:'-10px',ease:Power4.easeOut});
                 TweenMax.set('#intro ', {height:'auto'});
                 TweenMax.staggerTo('nav>ul>li', 0.25, {opacity:1,y:'0',ease:Power3.easeOut,delay:1}, -0.15);
+                TweenMax.to('#intro .text-fill', 0.25, {opacity:1,ease:Power3.easeOut});
             });
                 
         </script>
