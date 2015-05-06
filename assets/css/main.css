@@ -313,37 +313,8 @@ body {
 #content nav > .box .h-3 {
   top: 100%;
 }
-.back-link {
-  display: block;
-  background-color: black;
-  color: white;
-  text-decoration: none;
-  font-size: 5em;
-  position: absolute;
-  top: 50%;
-  margin-top: -37.5px;
-  left: 100px;
-  z-index: 9999;
-  width: 75px;
-  border-radius: 100%;
-  border: 10px solid white;
-  height: 75px;
-  text-align: center;
-  line-height: 76px;
-}
-#content.collections nav ul,
-#content.illustrations nav ul {
-  padding: 0;
-}
-#collection {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  background: white;
-  overflow: hidden;
-}
-#collection div#sidebar {
-  width: 80px;
+#sidebar {
+  width: 150px;
   height: 100vh;
   position: fixed;
   z-index: 9999;
@@ -355,22 +326,22 @@ body {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-#collection div#sidebar a.logo {
-  width: 70px;
-  height: 70px;
+#sidebar a.logo {
+  width: 90px;
+  height: 90px;
   display: block;
   margin: 0 auto;
   background: url(../images/logo-qv.svg) no-repeat center center;
-  background-size: 70px;
+  background-size: 90px;
 }
-#collection div#sidebar nav {
+#sidebar nav {
   display: block;
-  width: 80px;
+  width: 150px;
   height: auto;
   position: fixed;
   bottom: 0;
 }
-#collection div#sidebar nav a {
+#sidebar nav a {
   display: block;
   width: 79px;
   height: 45px;
@@ -379,7 +350,7 @@ body {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-#collection div#sidebar nav a.next {
+#sidebar nav a.next {
   background: url(../images/arrow-down.svg) repeat-y center center;
   background-size: 100%;
   -webkit-transition: all 0.4s ease;
@@ -388,7 +359,7 @@ body {
   -o-transition: all 0.4s ease;
   transition: all 0.4s ease;
 }
-#collection div#sidebar nav a.next:hover {
+#sidebar nav a.next:hover {
   background-position-y: 430%;
   -webkit-transition: all 0.4s ease;
   -moz-transition: all 0.4s ease;
@@ -396,7 +367,7 @@ body {
   -o-transition: all 0.4s ease;
   transition: all 0.4s ease;
 }
-#collection div#sidebar nav a.prev {
+#sidebar nav a.prev {
   background: url(../images/arrow-up.svg) repeat-y center center;
   background-size: 100%;
   -webkit-transition: all 0.4s ease;
@@ -405,7 +376,7 @@ body {
   -o-transition: all 0.4s ease;
   transition: all 0.4s ease;
 }
-#collection div#sidebar nav a.prev:hover {
+#sidebar nav a.prev:hover {
   background-position-y: 430%;
   -webkit-transition: all 0.4s ease;
   -moz-transition: all 0.4s ease;
@@ -413,7 +384,7 @@ body {
   -o-transition: all 0.4s ease;
   transition: all 0.4s ease;
 }
-#collection div#sidebar nav a.superTop {
+#sidebar nav a.superTop {
   background: url(../images/superTop.svg) repeat-y center center;
   background-size: 100%;
   -webkit-transition: all 0.4s ease;
@@ -422,7 +393,7 @@ body {
   -o-transition: all 0.4s ease;
   transition: all 0.4s ease;
 }
-#collection div#sidebar nav a.superTop:hover {
+#sidebar nav a.superTop:hover {
   background-position-y: 430%;
   -webkit-transition: all 0.4s ease;
   -moz-transition: all 0.4s ease;
@@ -430,11 +401,11 @@ body {
   -o-transition: all 0.4s ease;
   transition: all 0.4s ease;
 }
-#collection div#sidebar nav .disabled {
+#sidebar nav .disabled {
   opacity: 0.5;
 }
-#collection div#sidebar nav a.nextCol,
-#collection div#sidebar nav a.back-home {
+#sidebar nav a.nextCol,
+#sidebar nav a.back-home {
   font-family: 'AvenirNextLTPro-Bold', Helvetica, sans-serif;
   color: black;
   text-align: center;
@@ -442,11 +413,11 @@ body {
   text-transform: uppercase;
   line-height: 45px;
 }
-#collection div#sidebar nav a.nextCol {
+#sidebar nav a.nextCol {
   position: relative;
   z-index: 9999;
 }
-#collection div#sidebar nav a.nextCol p.nextColFull {
+#sidebar nav a.nextCol p.nextColFull {
   position: absolute;
   margin: 0;
   color: black;
@@ -456,7 +427,7 @@ body {
   top: 13px;
   opacity: 0;
 }
-#collection div#sidebar nav a.nextCol p.justNext {
+#sidebar nav a.nextCol p.justNext {
   position: absolute;
   margin: 0;
   color: black;
@@ -466,7 +437,7 @@ body {
   top: 13px;
   opacity: 0;
 }
-#collection div#sidebar nav a.nextCol:before {
+#sidebar nav a.nextCol:before {
   content: " ";
   line-height: 45px;
   height: 45px;
@@ -490,13 +461,78 @@ body {
   -o-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 }
-#collection div#sidebar nav a.nextCol.active:before {
+#sidebar nav a.nextCol.active:before {
   left: -1px;
   -webkit-transition: all 0.3s ease-out;
   -moz-transition: all 0.3s ease-out;
   -ms-transition: all 0.3s ease-out;
   -o-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
+}
+.back-link {
+  display: block;
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  font-size: 5em;
+  position: absolute;
+  top: 50%;
+  margin-top: -37.5px;
+  left: 100px;
+  z-index: 9999;
+  width: 75px;
+  border-radius: 100%;
+  border: 10px solid white;
+  height: 75px;
+  text-align: center;
+  line-height: 76px;
+}
+#collections nav ul,
+#illustrations nav ul {
+  padding: 0;
+}
+#collections #content,
+#illustrations #content {
+  width: 100%;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  padding-left: 150px;
+}
+#collections #content nav ul,
+#illustrations #content nav ul {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+}
+#collections #content nav ul li,
+#illustrations #content nav ul li {
+  width: 50%;
+  height: 50%;
+  margin: 0;
+}
+#collections #content nav ul li a,
+#illustrations #content nav ul li a {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+#collections #content nav ul li img,
+#illustrations #content nav ul li img {
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}
+#collection {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: white;
+  overflow: hidden;
 }
 #collection section.img-wrap {
   background: black;

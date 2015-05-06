@@ -14,23 +14,25 @@
         <?php echo css('assets/css/avenirFF.css') ?>
         <?php echo css('assets/css/main.css') ?>
         <link rel="canonical" href="http://quentinvasseur.com/" />
+
     </head>
-    <body> 
-        <div id="intro">
-            <div class="text-fill">quentin&nbsp;vasseur</div>
+    
+    <body id="illustrations"> 
+        <div id="sidebar">
+            <a href="./" class="logo"></a>
+
+            <a href="./" class='back-link'><i class="icon-arrow_left"></i></a> 
         </div>
+
         <div id="content" class="illustrations">
-            <!-- <h1>quentin&nbsp;vasseur</h1> -->
-            <a href="./" class='back-link'><i class="icon-arrow_left"></i></a>
             <nav>
                 <ul>
                     <?php foreach($pages->find('work/illustrations')->children()->visible() as $wo): ?>
-                        <li><a href="<?php echo $wo->url() ?>"><?php echo html($wo->title()); ?></a></li>
+                        <li><a href="<?php echo $wo->url() ?>">image</a></li>
                     <?php endforeach; ?>
                 </ul>
             </nav>
         </div>
-        <!-- <div class="background"></div> -->
 
         <?php echo js('assets/js/vendor/modernizr-2.6.2.min.js') ?>
         <?php echo js('assets/js/vendor/jquery-1.9.1.min.js') ?>
@@ -38,12 +40,20 @@
         <?php echo js('assets/js/vendor/TweenMax.min.js') ?>
         <?php echo js('assets/js/main.js') ?>
         <script>
+            TweenMax.set('nav>ul>li:first-child', {opacity:0,x:'-100'});
+            TweenMax.set('nav>ul>li:nth-child(2)', {opacity:0,y:'100'});
+            TweenMax.set('nav>ul>li:nth-child(3)', {opacity:0,y:'-100'});
+            TweenMax.set('nav>ul>li:last-child', {opacity:0,x:'100'});
+            
             $(document).ready(function(){
-                TweenMax.set('nav>ul>li', {opacity:0,y:'-100'});
-                TweenMax.set('#intro .text-fill', {width:'100%',top:'0',left:'280px',scale:0.5,marginTop:'-10px',ease:Power4.easeOut});
-                TweenMax.set('#intro ', {height:'auto'});
-                TweenMax.staggerTo('nav>ul>li', 0.25, {opacity:1,y:'0',ease:Power3.easeOut,delay:1}, -0.15);
-                TweenMax.to('#intro .text-fill', 0.25, {opacity:1,ease:Power3.easeOut});
+                var tlCollections = new TimelineMax({paused:true});
+
+            
+                tlCollections.set('#intro .text-fill', {opacity:0,width:'979px',top:'0',left:'280px',scale:0.5,marginTop:'-10px'})
+                             .set('#intro ', {height:'auto'})
+                             .staggerTo('nav>ul>li', 0.55, {opacity:1,y:'0',x:'0',ease:Power3.easeOut,delay:0.25}, -0.15)
+                             .to('#intro .text-fill', 0.5, {color:'#ffffff',ease:Power3.easeInOut});
+                tlCollections.play();
             });
                 
         </script>

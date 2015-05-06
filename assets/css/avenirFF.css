@@ -27,7 +27,7 @@
 @font-face {
 	font-family: 'AvenirNextLTPro-Heavy';
 	src: url('../font/avenir/AvenirNextLTPro-Heavy.woff') format('woff'),
-	url('../font/avenir/AvenirNextLTPro-Heavy.svg#AvenirNextLTPro-Heavy') format('svg');
+	url('../font/avenir/AvenirNextLTPro-Heavy.svg') format('svg');
 }
 /* MEDIUM */
 @font-face {
@@ -38,7 +38,7 @@
 @font-face {
 	font-family: 'AvenirNextLTPro-Medium';
 	src: url('../font/avenir/AvenirNextLTPro-Medium.woff') format('woff'),
-	url('../font/avenir/AvenirNextLTPro-Medium.svg#AvenirNextLTPro-Medium') format('svg');
+	url('../font/avenir/AvenirNextLTPro-Medium.svg') format('svg');
 }
 /* REGULAR */
 @font-face {
@@ -49,7 +49,7 @@
 @font-face {
 	font-family: 'AvenirNextLTPro-Regular';
 	src: url('../font/avenir/AvenirNextLTPro-Regular.woff') format('woff'),
-	url('../font/avenir/AvenirNextLTPro-Regular.svg#AvenirNextLTPro-Regular') format('svg');
+	url('../font/avenir/AvenirNextLTPro-Regular.svg') format('svg');
 }
 /* ULTRA-LIGHT */
 @font-face {
@@ -60,7 +60,7 @@
 @font-face {
 	font-family: 'AvenirNextLTPro-UltLt';
 	src: url('../font/avenir/AvenirNextLTPro-UltLt.woff') format('woff'),
-	url('../font/avenir/AvenirNextLTPro-UltLt.svg#AvenirNextLTPro-UltLt') format('svg');
+	url('../font/avenir/AvenirNextLTPro-UltLt.svg') format('svg');
 }
 /* CONDENSED ITALIC */
 @font-face {
@@ -71,5 +71,5 @@
 @font-face {
     font-family: 'AvenirNextLTPro-BoldCnIt';
     src: url('../font/AvenirNextLTPro-BoldCnIt.woff') format('woff'),
-    url('../font/AvenirNextLTPro-BoldCnIt.svg#AvenirNextLTPro-BoldCnIt') format('svg');
+    url('../font/AvenirNextLTPro-BoldCnIt.svg') format('svg');
 }

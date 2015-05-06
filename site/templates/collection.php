@@ -19,11 +19,6 @@
     
     <body> 
         <div id="collection">
-            <!-- <section class="landing">
-                <h1><?php echo html($page->title()) ?></h1>
-                <?php echo kirbytext($page->description()) ?>
-            </section> -->
-
             <div id="sidebar">
                 <a href="./" class="logo"></a>
 
