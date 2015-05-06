@@ -19,9 +19,9 @@
     
     <body id="collections"> 
         <div id="sidebar">
-            <a href="./" class="logo"></a>
+            <a href="<?php echo $page->parent()->url() ?>" class="logo"></a>
 
-            <a href="./" class='back-link'><i class="icon-arrow_left"></i></a> 
+            <a href="<?php echo $page->parent()->url() ?>" class='back-link'><i class="icon-arrow_left"></i></a> 
         </div>
 
         <div id="content" class="collections">

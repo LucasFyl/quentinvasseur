@@ -242,7 +242,7 @@ body {
         }
         &:last-child {
           span {
-            background: url(../images/bg-misc.jpg) no-repeat center center;
+            background: url(../images/bg-sneakers.jpg) no-repeat center center;
             background-size: cover; 
           }
         }
@@ -313,8 +313,9 @@ body {
   z-index: 9999;
   top: 0; left: 0;
   background: white;
-  border-right:1px solid black;
+  border-right:10px solid black;
   .box-sizing();
+
 
   a.logo {
     // text-indent: -999px;
@@ -334,7 +335,7 @@ body {
 
     a {
       display: block;
-      width: 79px;
+      width: 150px;
       height: 45px;
       border-top: 1px solid black;
       .box-sizing();
@@ -342,39 +343,39 @@ body {
 
     a.next {
       background: url(../images/arrow-down.svg) repeat-y center center;
-      background-size: 100%;
-      .transition(all 0.4s ease); 
+      background-size: 60%;
+      // .transition(all 0.4s ease); 
 
-      &:hover {
-        background-position-y: 430%;
-        .transition(all 0.4s ease); 
-      }
+      // &:hover {
+      //   background-position-y: 430%;
+      //   .transition(all 0.4s ease); 
+      // }
     }
 
     a.prev {
       background: url(../images/arrow-up.svg) repeat-y center center;
-      background-size: 100%;
-      .transition(all 0.4s ease); 
+      background-size: 60%;
+      // .transition(all 0.4s ease); 
 
-      &:hover {
-        background-position-y: 430%;
-        .transition(all 0.4s ease); 
-      }
+    //   &:hover {
+    //     background-position-y: 430%;
+    //     .transition(all 0.4s ease); 
+    //   }
     }
 
     a.superTop {
       background: url(../images/superTop.svg) repeat-y center center;
-      background-size: 100%;
-      .transition(all 0.4s ease); 
+      background-size: 60%;
+      .transition(all 0.6s ease); 
 
       &:hover {
-        background-position-y: 430%;
-        .transition(all 0.4s ease); 
+        background-position-y: 330%;
+        .transition(all 0.6s ease); 
       }
     }
 
     .disabled {
-      opacity: 0.5;
+      opacity: 0.3;
     }
 
     a.nextCol, a.back-home {
@@ -382,27 +383,28 @@ body {
       color: black; text-align: center;
       text-decoration: none; text-transform: uppercase;
       line-height: 45px;
+      font-size: 2.1em;
     }
 
     a.nextCol{
       position: relative;       
       z-index: 9999;
-      p.nextColFull {
+      .nextColFull {
         position: absolute;
         margin: 0;
         color: black;
         z-index: 9999;
-        width: 160px;
+        width: 300px;
         left: 0;
         top: 13px;
         opacity: 0;
       }
-      p.justNext {
+      .justNext {
         position: absolute;
         margin: 0;
         color: black;
         z-index: 9999;
-        width: 80px;
+        width: 150px;
         left: 0;
         top: 13px;
         opacity: 0;
@@ -413,7 +415,7 @@ body {
       content: " ";
       line-height: 45px;
       height: 45px;
-      width: 180px;
+      width: 300px;
       padding-right: 20px;
       background-color: white;
       background-image: url(../images/arrow-right.png);
@@ -423,7 +425,7 @@ body {
       .box-sizing();
       position: absolute;
       z-index: 9998;
-      left: -202px; top:-1px;
+      left: -300px; top:-1px;
       .transition(all 0.3s ease-out);
     }
 
@@ -433,6 +435,19 @@ body {
     }
   }
 }
+#sidebar:after {
+      content: ' ';
+    width: 115px;
+    display: block;
+    height: 115px;
+    margin-top: -47px;
+    background: #000;
+    position: absolute;
+    z-index: -1;
+    border-radius: 100%;
+    left: 80px;
+    top: 50%;   
+  }
 .back-link {
   display: block;
   // width: 50px;height: 50px;
@@ -442,13 +457,14 @@ body {
   font-size: 5em;
   position: absolute;
   top: 50%; margin-top: -37.5px;
-  left:100px;z-index: 9999;
+  left:90px;z-index: 9999;
   width: 75px;
   border-radius: 100%;
   border: 10px solid white;
   height: 75px;
   text-align: center;
   line-height: 76px;
+  
 }
 
 #collections,
@@ -501,15 +517,17 @@ body {
   overflow: hidden;
   
   section.img-wrap {
-    background: black;
+    background: white;
     height: auto;
-    margin-left: 80px;
+    margin-left: 150px;
     position: absolute; top: 0;
     overflow: hidden;
-    width: ~"calc(100vw - 80px)";
+    width: 100%;
+    width: ~"calc(100vw - 150px)";
     div.single-img {
       height: 100vh;
-      width: ~"calc(100vw - 80px)";
+      width: 100%;
+      width: ~"calc(100vw - 150px)";
       display: block;
       img {
         height: inherit; display: block;

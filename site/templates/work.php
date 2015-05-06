@@ -25,10 +25,10 @@
             <!-- <h1>quentin&nbsp;vasseur</h1> -->
             <nav>
                 <ul>
-                    <li><a href="collections">collections</a><span></span></li>
-                    <li><a href="illustrations">illustrations</a><span></span></li>
+                    <li><a href="work/collections">collections</a><span></span></li>
+                    <li><a href="work/illustrations">illustrations</a><span></span></li>
                     <li><a href="about">about</a><span></span></li>
-                    <li><a href="sneakers">sneakers</a><span></span></li>
+                    <li><a href="work/sneakers">sneakers</a><span></span></li>
                 </ul>
                 <div class="box">
                     <div class="vertical v-1 white-bar"></div>
