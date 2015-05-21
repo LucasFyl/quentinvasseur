@@ -19,9 +19,9 @@
     
     <body id="illustrations"> 
         <div id="sidebar">
-            <a href="./" class="logo"></a>
+            <a href="<?php echo $page->parent()->url() ?>" class="logo"></a>
 
-            <a href="./" class='back-link'><i class="icon-arrow_left"></i></a> 
+            <a href="<?php echo $page->parent()->url() ?>" class='back-link'><i class="icon-arrow_left"></i></a> 
         </div>
 
         <div id="content" class="illustrations">
@@ -30,6 +30,14 @@
                     <?php foreach($pages->find('work/illustrations')->children()->visible() as $co): ?>
                         <li style='opacity:0;'>
                             <a href="<?php echo $co->url() ?>">
+                                <div class="hoverInfos">
+                                    <h2><?php echo $co->title() ?>
+                                    <span class="h top"></span>
+                                    <span class="h bottom"></span>
+                                    <span class="v left"></span>
+                                    <span class="v right"></span>
+                                    </h2>
+                                </div>
                                 <img src="<?php echo $co->files()->first()->url() ?>" alt="<?php echo $co->title() ?>"/>
                             </a>
                         </li>
@@ -45,13 +53,31 @@
         <?php echo js('assets/js/vendor/TweenMax.min.js') ?>
         <?php echo js('assets/js/main.js') ?>
         <script>
+
+
+            function animateSpans(infos) {
+                var h = infos.find('span.h'),
+                    v = infos.find('span.v');
+                spanAnim = new TimelineMax();
+                spanAnim.to(h, 0.4, {width:'50%',ease:Power3.easeInOut,delay:0.5})
+                        .to(v, 0.4, {height:'3.03em',ease:Power3.easeInOut,onComplete:function(){
+                            setTimeout(function(){
+                                killInfos();
+                            },2000);
+                        }}, "-=0.25");
+
+                function killInfos() {
+                    TweenMax.to(infos, 0.5, {opacity:0,ease:Power3.easeInOut});
+                    TweenMax.to(v, 0.5, {height:0,ease:Power3.easeInOut});
+                    TweenMax.to(h, 0.5, {width:0,ease:Power3.easeInOut});
+                    infos = $();
+                }
+
+            }
+
             $(document).ready(function(){
 
-                TweenMax.set('nav>ul>li:first-child', {y:'-150'});
-                TweenMax.set('nav>ul>li:nth-child(2)', {y:'-150'});
-                TweenMax.set('nav>ul>li:nth-child(3)', {y:'-150'});
-                TweenMax.set('nav>ul>li:last-child', {y:'-150'});
-
+                settersCollection();
                 $(window).on('resize', ratioImage);
 
                 var tlCollections = new TimelineMax({paused:true});
@@ -61,6 +87,11 @@
                              .to('#intro .text-fill', 0.5, {color:'#ffffff',ease:Power3.easeInOut});
                 tlCollections.play();
 
+
+                $('nav > ul > li > a').hover(function(){
+                    infos = $(this).find('.hoverInfos');
+                    TweenMax.to(infos, 0.5, {opacity:1,ease:Power3.easeInOut,delay:0.3,onComplete:animateSpans(infos)});
+                });
 
                 function ratioImage() {
                   $('nav ul li').each(function(){

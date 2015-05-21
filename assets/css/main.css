@@ -504,6 +504,54 @@ body {
   height: 100%;
   position: relative;
 }
+#collections #content nav ul li a div,
+#illustrations #content nav ul li a div {
+  position: relative;
+  background: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+}
+#collections #content nav ul li a div h2,
+#illustrations #content nav ul li a div h2 {
+  margin: 0;
+  text-align: center;
+  letter-spacing: 2px;
+  padding-top: 10%;
+}
+#collections #content nav ul li a div span,
+#illustrations #content nav ul li a div span {
+  background: white;
+  position: absolute;
+}
+#collections #content nav ul li a div span.h,
+#illustrations #content nav ul li a div span.h {
+  width: 50%;
+  height: 10px;
+}
+#collections #content nav ul li a div span.v,
+#illustrations #content nav ul li a div span.v {
+  width: 10px;
+  height: 3.03em;
+}
+#collections #content nav ul li a div span.bottom,
+#illustrations #content nav ul li a div span.bottom {
+  bottom: -50px;
+}
+#collections #content nav ul li a div span.top,
+#illustrations #content nav ul li a div span.top {
+  top: -120px;
+}
+#collections #content nav ul li a div span.left,
+#illustrations #content nav ul li a div span.left {
+  left: -50%;
+  top: -35px;
+}
+#collections #content nav ul li a div span.right,
+#illustrations #content nav ul li a div span.right {
+  right: -50%;
+  bottom: 35px;
+}
 #collections #content nav ul li img,
 #illustrations #content nav ul li img {
   width: auto;
@@ -514,6 +562,7 @@ body {
   bottom: 0;
   right: 0;
   margin: auto;
+  min-height: 100%;
 }
 #collection {
   width: 100%;
