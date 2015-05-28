@@ -17,15 +17,33 @@
 
     </head>
     
-    <body class="about"> 
+    <body id="about"> 
+        
+        <div class="container">
+            <h1>Hi, my name is Quentin Vasseur</h1>
+            <h2>Et je parle très bien Latin.</h2>
+
+            <div class="description">
+                <span>
+                    <h3>Lorem Ipsum dolor sit amet</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>    
+                </span>
+                <span>
+                    <h3>Consectetur adipiscing elit</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>    
+                </span>
+                
+                </div>
+            <div class="cta">
+                <a href="mailto:lucasfayolle@orange.fr">Contactez moi !</a>
+                <a href="#">télécharger mon CV</a>
+            </div>
+        </div>
+
 
         <?php echo js('assets/js/vendor/modernizr-2.6.2.min.js') ?>
         <?php echo js('assets/js/vendor/jquery-1.9.1.min.js') ?>
-        <?php echo js('assets/js/scripts/greensock/TweenLite.min.js') ?>
-        <?php echo js('assets/js/scripts/greensock/TimelineLite.min.js') ?>
-        <?php echo js('assets/js/scripts/greensock/EasePack.min.js') ?>
-        <?php echo js('assets/js/scripts/greensock/CSSPlugin.min.js') ?>
+        <?php echo js('assets/js/vendor/tweenmax.min.js') ?>
         <?php echo js('assets/js/main.js') ?>
-
     </body>
 </html>

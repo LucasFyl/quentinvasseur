@@ -14,45 +14,47 @@
         <?php echo css('assets/css/avenirFF.css') ?>
         <?php echo css('assets/css/main.css') ?>
         <link rel="canonical" href="http://quentinvasseur.com/" />
+
     </head>
-    <body> 
     
-       <div id="content">
-            <h1>quentin&nbsp;vasseur</h1>
-            <nav>
-                <ul>
-                    <li class="direct"><a href="./about">about</a></li>
-                    <li><a href="#" class="dropdown">collections</a>
-                        <ul class="dropdown-menu">
-                            <?php foreach($pages->find('work/collections')->children()->visible() as $wo): ?>
-                                <li class="direct"><a href="<?php echo $wo->url() ?>"><?php echo html($wo->title()); ?></a></li>
-                            <?php endforeach; ?>
-                        </ul>
-                    </li>
-                    <li><a href="#" class="dropdown">illustrations</a>
-                        <ul class="dropdown-menu">
-                            <?php foreach($pages->find('work/illustrations')->children()->visible() as $wo): ?>
-                                <li class="direct"><a href="<?php echo $wo->url() ?>"><?php echo html($wo->title()); ?></a></li>
-                            <?php endforeach; ?>
-                        </ul>
-                    </li>
-                    <li><a href="#" class="dropdown-sneaker">sneakers</a>
-                        <ul class="dropdown-menu" >
-                            <?php foreach($pages->find('work/sneakers')->children()->visible() as $wo): ?>
-                                <li class="direct"><a href="<?php echo $wo->url() ?>"><?php echo html($wo->title()); ?></a></li>
-                            <?php endforeach; ?>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
-            <span class='bg'></span>
+    <body> 
+        <div id="collection" class="white">
+
+            <div id="sidebar">
+                <a href="<?php echo $site->url() ?>" class="logo"></a>
+                <a href="<?php echo $page->parent()->url() ?>" class='back-link'><i class="icon-arrow_left"></i></a> 
+
+                <nav>
+                    <a href="#"class="prev disabled"></a>
+                    <a href="#"class="next"></a>
+                    <a href="#" class="superTop hidden"></a>
+                    <?php if($page->hasNext() == true): ?>
+                    <a href="<?php echo $page->next()->url() ?>" class="nextCol">next</a>
+                    <?php endif; ?>
+                    <?php if($page->hasNext() == false): ?>
+                    <a href="./" class="back-home">home</a>
+                    <?php endif; ?>
+                </nav>
+
+            </div>
+
+            <section class="img-wrap">
+                <?php foreach($page->images() as $image): ?>
+                    <div class="single-img">
+                        <img src="<?php echo $image->url() ?>" alt="<?php echo html($page->title())?>" class="<?php echo html($image->title()) ?>"/>
+                    </div>
+                <?php endforeach ?>
+            </section>
         </div>
-        <div class="background"></div>
 
         <?php echo js('assets/js/vendor/modernizr-2.6.2.min.js') ?>
         <?php echo js('assets/js/vendor/jquery-1.9.1.min.js') ?>
         <?php echo js('assets/js/vendor/tweenmax.min.js') ?>
-        <?php echo js('assets/js/collections.js') ?>
+        <?php echo js('assets/js/main.js') ?>
+        <?php echo js('assets/js/collection.js') ?>
         
+        <script>
+            var hasPrev = false, i = 0;
+        </script>
     </body>
 </html>

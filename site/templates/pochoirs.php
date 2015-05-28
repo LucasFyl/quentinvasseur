@@ -25,7 +25,9 @@
             </section>
 
             <div id="sidebar">
-                <a href="./../collections" class="logo"></a>
+                <a href="<?php echo $site->url() ?>" class="logo"></a>
+                
+                <a href="<?php echo $page->parent()->url() ?>" class='back-link'><i class="icon-arrow_left"></i></a> 
 
                 <nav>
                     <a href="#"class="prev disabled"></a>

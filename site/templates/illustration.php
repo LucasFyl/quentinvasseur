@@ -18,7 +18,7 @@
     </head>
     
     <body> 
-        <div id="collection">
+        <div id="collection" class="white">
             <div id="sidebar">
                 <a href="<?php echo $site->url() ?>" class="logo"></a>
 

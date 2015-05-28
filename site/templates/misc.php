@@ -19,13 +19,10 @@
     
     <body> 
         <div id="collection">
-            <!-- <section class="landing">
-                <h1><?php echo html($page->title()) ?></h1>
-                <?php echo kirbytext($page->description()) ?>
-            </section> -->
 
             <div id="sidebar">
-                <a href="./" class="logo"></a>
+                <a href="<?php echo $site->url() ?>" class="logo"></a>
+                <a href="<?php echo $page->parent()->url() ?>" class='back-link'><i class="icon-arrow_left"></i></a> 
 
                 <nav>
                     <a href="#"class="prev disabled"></a>
