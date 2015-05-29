@@ -119,7 +119,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 99997;
+  z-index: 9997;
   background: black;
 }
 #intro > div {
@@ -146,7 +146,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 99998;
+  z-index: 9998;
   background: transparent;
   width: 100%;
   height: 100%;

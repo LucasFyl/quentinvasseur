@@ -16,11 +16,13 @@
         <link rel="canonical" href="http://quentinvasseur.com/" />
     </head>
     <body> 
-    
+        <div id="loader"></div>
+
         <div id="intro">
             <div class="text-fill">quentin&nbsp;vasseur</div>
             <div class='empty' style="opacity:0;">quentin&nbsp;vasseur</div>
         </div>
+
        <div id="content">
             <!-- <h1>quentin&nbsp;vasseur</h1> -->
             <nav>
@@ -48,29 +50,34 @@
         <?php echo js('assets/js/vendor/TweenMax.min.js') ?>
         <?php echo js('assets/js/main.js') ?>
         <script>
-            TweenMax.set('#intro .text-fill', {opacity:0,width:'979px',top:'0',left:'280px',scale:0.5,marginTop:'-10px'})
-            TweenMax.set('nav>ul>li:first-child', {opacity:0,x:'-150'});
-            TweenMax.set('nav>ul>li:nth-child(2)', {opacity:0,y:'150'});
-            TweenMax.set('nav>ul>li:nth-child(3)', {opacity:0,y:'-150'});
-            TweenMax.set('nav>ul>li:last-child', {opacity:0,x:'150'});
 
-            $(window).load(function() { 
+        $(window).load(function() { 
+            TweenMax.set('.vertical', {opacity:0,height:0});
+            TweenMax.set('.horizontal', {opacity:0,width:0});
+            TweenMax.set('#intro .empty', {display:'none'});
+            TweenMax.set('#intro .text-fill', {top:'10%',scale:1.65});
 
-                //anim du loader -> logo
-                var animIntro = new TimelineMax({paused:true});
-                animIntro.set('#intro .empty', {display:'none'})
-                         .set('.vertical', {opacity:0,height:0})
-                         .set('.horizontal', {opacity:0,width:0})
-                         .set('#intro ', {height:'auto'})
-                         .to('.text-fill', 0.3, {opacity:1,ease:Power2.easeInOut})
-                         .staggerTo(['nav>ul>*'], 1, {opacity:1,y:'0',x:'0',ease:Power3.easeOut}, -0.25, "+=0.25")
-                         .to('.white-bar', 0.33, {opacity:1,ease:Power3.easeOut}, "-=0.5" )
-                         .to('.vertical', 1, {height:'100%',ease:Power3.easeOut},"-=0.5")
-                         .to('.horizontal', 1, {width:'100%',ease:Power3.easeOut}, "-=1")
-                         .to('#intro .text-fill', 0.7, {color:'#ffffff',ease:Power3.easeInOut}, "-=0.7")
-                         ;
-                animIntro.play();
-            });
-        </script>
+            var navList = [
+                'nav>ul>li:last-child',
+                'nav>ul>li:nth-child(3)',
+                'nav>ul>li:nth-child(2)',
+                'nav>ul>li:first-child'
+            ];
+            TweenMax.set(navList, {opacity:0});
+
+            setTimeout(function(){
+                TweenMax.to('#loader', 0.25, {display:'none',opacity:0,ease:Expo.easeOut,onComplete:function() {
+                    // settersHome();
+                    var tlw = new TimelineMax();
+                    tlw.staggerFromTo(navList, 0.65, {opacity:0,scale:0,y:50}, {opacity:1,scale:1,y:0,ease:Expo.easeOut}, -0.15, "+=0.25")
+                       .to('.text-fill', 0.5, {opacity:1,repeat:2,yoyo:true,ease:Power1.easeOut})
+                       .to('.white-bar', 0.33, {opacity:1,ease:Power3.easeOut}, "-=0.5" )
+                       .to('.vertical', 1, {height:'100%',ease:Power3.easeOut},"-=0.5")
+                       .to('.horizontal', 1, {width:'100%',ease:Power3.easeOut}, "-=1")
+                       .to('.text-fill', 0.25, {color:'white',ease:Expo.easeOut}, "-=1");
+                }})
+            }, 250);
+        });
+        // </script>
     </body>
 </html>

@@ -7,11 +7,11 @@ function settersHome(){
 }
 
 var navList = [
-        'nav>ul>li:last-child',
-        'nav>ul>li:nth-child(3)',
-        'nav>ul>li:nth-child(2)',
-        'nav>ul>li:first-child'
-    ];
+    'nav>ul>li:last-child',
+    'nav>ul>li:nth-child(3)',
+    'nav>ul>li:nth-child(2)',
+    'nav>ul>li:first-child'
+];
 
 var animIntro = new TimelineMax({paused:true});
 animIntro.set('#intro .empty', {display:'none'})
@@ -20,12 +20,12 @@ animIntro.set('#intro .empty', {display:'none'})
          .to('.white-bar', 0.33, {opacity:1,ease:Power3.easeOut}, "-=0.5" )
          .to('.vertical', 1, {height:'100%',ease:Power3.easeOut},"-=0.5")
          .to('.horizontal', 1, {width:'100%',ease:Power3.easeOut}, "-=1")
-         .to('#intro .text-fill', 0.7, {color:'#ffffff',ease:Power3.easeInOut})
+         .to('#intro .text-fill', 0.7, {color:'#ffffff',ease:Power3.easeInOut}, "-=1")
          ;
 
 $(window).load(function() { 
     setTimeout(function(){
-        TweenMax.to('#loader', 0.2, {display:'none',visibility:'hidden',ease:Power3.easeOut,onComplete:function() {
+        TweenMax.to('#loader', 0.25, {display:'none',opacity:0,ease:Expo.easeOut,onComplete:function() {
             settersHome();
         }})
     }, 500);
