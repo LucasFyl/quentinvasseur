@@ -1,4 +1,22 @@
+function nextColIn() {
+	_this = $(this);
+	_this.addClass('active');
+	_this.empty();
+	_this.html('<span class="nextColFull">next collection</span>').promise().done(function(){
+		TweenMax.to('.nextColFull', 0.25, {top:0,opacity:1,ease:Power3.easeOut,delay:0.3})
+	});
+}
 
+function nextColOut() {
+	TweenMax.to('.nextColFull', 0.25, {top:"13px",opacity:0,ease:Power3.easeOut});
+	$('.nextColFull').remove();
+	$('a.nextCol').removeClass('active');
+	setTimeout(function(){
+		$('a.nextCol').html('<span class="justNext">next<span>').promise().done(function(){
+			TweenMax.to('.justNext', 0.25, {top:0,opacity:1,ease:Power3.easeOut});
+		});
+	}, 250);
+}
 // Partie Collection single 
 $(document).ready(function(){
 	setSizeCollection();
@@ -8,24 +26,7 @@ $(document).ready(function(){
 
 	$(window).resize(setSizeCollection);
 
-	$('a.nextCol').on({
-		mouseenter: function(){
-			$(this).addClass('active');
-			$(this).empty();
-			$(this).html('<span class="nextColFull">next collection</span>').promise().done(function(){
-				TweenMax.to('.nextColFull', 0.25, {top:0,opacity:1,ease:Power3.easeOut,delay:0.3})
-			});
-		}, mouseleave: function(){
-			TweenMax.to('p.nextColFull', 0.25, {top:"13px",opacity:0,ease:Power3.easeOut});
-			$('p.nextColFull').remove();
-			$('a.nextCol').removeClass('active');
-			setTimeout(function(){
-				$('a.nextCol').html('<span class="justNext">next<span>').promise().done(function(){
-					TweenMax.to('.justNext', 0.25, {top:0,opacity:1,ease:Power3.easeOut});
-				});
-			}, 250);
-		}
-	});
+	$('a.nextCol').hoverIntent(nextColIn, nextColOut);
 
 	function setSizeCollection() {
 		var imgW = $(window).width() - 80 - 15,
