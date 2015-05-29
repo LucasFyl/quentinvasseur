@@ -630,8 +630,8 @@ body {
         }
         p {
           line-height: 1.5;
-          text-align: left;
-          font-size: 13px; 
+          text-align: justify;
+          font-size: 16px; 
 
         }
         h3 {
@@ -658,13 +658,32 @@ body {
         float: left;
         line-height: 70px;
         &:first-child {
-          margin-right: 50px;
+          margin-right: 6%;
+          margin-left: -2%;
         }
         &:hover {
           background-color:white;
           color: black;
+          text-decoration: underline;
           .transition(all 0.2s ease-in-out);
         }
+      }
+    }
+    .back  {
+      display: block;
+      margin: 40px auto;
+      float: none;
+      font-family: 'AvenirNextLTPro-Demi', helvetica, sans-serif;
+      letter-spacing: 1px;
+      font-size: 21px;
+      padding-top: 30px;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.6);
+      clear: left;
+      line-height: 90px;
+      &:hover {
+        .transition(all 0.2s ease-in-out);
+        color: white;
       }
     }
   }

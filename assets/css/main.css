@@ -649,8 +649,8 @@ body {
 }
 #about .container .description p {
   line-height: 1.5;
-  text-align: left;
-  font-size: 13px;
+  text-align: justify;
+  font-size: 16px;
 }
 #about .container .description h3 {
   font-family: 'AvenirNextLTPro-UltLt', helvetica, sans-serif;
@@ -677,16 +677,39 @@ body {
   line-height: 70px;
 }
 #about .container .cta a:first-child {
-  margin-right: 50px;
+  margin-right: 6%;
+  margin-left: -2%;
 }
 #about .container .cta a:hover {
   background-color: white;
   color: black;
+  text-decoration: underline;
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
   -ms-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
+}
+#about .container .back {
+  display: block;
+  margin: 40px auto;
+  float: none;
+  font-family: 'AvenirNextLTPro-Demi', helvetica, sans-serif;
+  letter-spacing: 1px;
+  font-size: 21px;
+  padding-top: 30px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.6);
+  clear: left;
+  line-height: 90px;
+}
+#about .container .back:hover {
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  color: white;
 }
 /* ==========================================================================
    Helper classes
