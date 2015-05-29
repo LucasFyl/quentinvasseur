@@ -106,41 +106,47 @@ body {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+#loader {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 99999;
+  background-color: black;
+}
 #intro {
   width: 100%;
   height: 100%;
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 999;
+  z-index: 99997;
   background: black;
 }
 #intro > div {
-  margin-left: -490px;
+  display: inline-block;
+  width: auto;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
   position: absolute;
   top: 50%;
   margin-top: -40px;
-  left: 50%;
-  height: 7.2em;
-  width: 979px;
+  font-size: 4.5em;
   font-family: 'EthnocentricRg-Regular', sans-serif;
-  font-size: 7.2em;
   -webkit-text-stroke: 2px black;
   color: rgba(255, 255, 255, 0.2);
 }
 #intro div.text-fill {
   -webkit-text-stroke: 0px;
   z-index: 1001;
-  color: rgba(255, 255, 255, 0.6);
-  width: 0;
-  height: auto;
-  overflow: hidden;
+  color: rgba(255, 255, 255, 0.65);
+  opacity: 0;
 }
 #content {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 998;
+  z-index: 99998;
   background: transparent;
   width: 100%;
   height: 100%;

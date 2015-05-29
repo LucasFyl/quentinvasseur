@@ -1,4 +1,4 @@
-	function settersCollection() {
+function settersCollection() {
 
 
     TweenMax.set('nav>ul>li:first-child', {y:'-150'});

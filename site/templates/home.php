@@ -16,13 +16,12 @@
         <link rel="canonical" href="http://quentinvasseur.com/" />
     </head>
     <body> 
-    
+        <div id="loader"></div>
         <div id="intro">
             <div class="text-fill">quentin&nbsp;vasseur</div>
             <div class='empty'>quentin&nbsp;vasseur</div>
         </div>
        <div id="content">
-            <!-- <h1>quentin&nbsp;vasseur</h1> -->
             <nav>
                 <ul>
                     <li><a href="work/collections">collections</a><span></span></li>
@@ -40,38 +39,11 @@
                 </div>
             </nav>
         </div>
-        <!-- <div class="background"></div> -->
 
         <?php echo js('assets/js/vendor/modernizr-2.6.2.min.js') ?>
         <?php echo js('assets/js/vendor/jquery-1.9.1.min.js') ?>
-        <!--<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.16.1/TweenMax.min.js"></script>-->
         <?php echo js('assets/js/vendor/TweenMax.min.js') ?>
         <?php echo js('assets/js/main.js') ?>
-        <script>
-            TweenMax.to('#intro .text-fill', 2, {width:'979px',ease:Power4.easeInOut});
-            TweenMax.set('nav>ul>li:first-child', {opacity:0,x:'-150'});
-            TweenMax.set('nav>ul>li:nth-child(2)', {opacity:0,y:'150'});
-            TweenMax.set('nav>ul>li:nth-child(3)', {opacity:0,y:'-150'});
-            TweenMax.set('nav>ul>li:last-child', {opacity:0,x:'150'});
-
-            $(window).load(function() { 
-
-                //anim du loader -> logo
-                var animIntro = new TimelineMax({paused:true});
-                animIntro.set('#intro > div:nth-child(2)', {opacity:0,delay:1.9})
-                         .set('#intro .empty', {display:'none'})
-                         .set('.vertical', {opacity:0,height:0})
-                         .set('.horizontal', {opacity:0,width:0})
-                         .to('#intro .text-fill', 1.2, {top:'0',left:'280px',scale:0.5,marginTop:'-10px',ease:Power4.easeOut})
-                         .set('#intro ', {height:'auto'})
-                         .staggerTo(['nav>ul>*'], 1, {opacity:1,y:'0',x:'0',ease:Power3.easeOut}, -0.25, "+=0.25")
-                         .to('.white-bar', 0.33, {opacity:1,ease:Power3.easeOut}, "-=0.5" )
-                         .to('.vertical', 1, {height:'100%',ease:Power3.easeOut},"-=0.5")
-                         .to('.horizontal', 1, {width:'100%',ease:Power3.easeOut}, "-=1")
-                         .to('#intro .text-fill', 0.7, {color:'#ffffff',ease:Power3.easeInOut})
-                         ;
-                animIntro.play();
-            });
-        </script>
+        <?php echo js('assets/js/home.js') ?>
     </body>
 </html>
