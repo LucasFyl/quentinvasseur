@@ -52,6 +52,7 @@
         <?php echo js('assets/js/vendor/modernizr-2.6.2.min.js') ?>
         <?php echo js('assets/js/vendor/jquery-1.9.1.min.js') ?>
         <?php echo js('assets/js/vendor/tweenmax.min.js') ?>
+        <?php echo js('assets/js/vendor/hoverIntent.js') ?>
         <?php echo js('assets/js/main.js') ?>
         <?php echo js('assets/js/collection.js') ?>
         
