@@ -58,11 +58,6 @@
         
         <script>
             var hasPrev = false, i = 0;
-            $(window).load(function() { 
-                setTimeout(function(){
-                    TweenMax.to('#loader', 0.35, {display:'none',opacity:0,ease:Expo.easeOut})
-                }, 250);
-            });
         </script>
     </body>
 </html>

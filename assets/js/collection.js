@@ -17,6 +17,13 @@ function nextColOut() {
 		});
 	}, 250);
 }
+$(window).load(function() { 
+    setTimeout(function(){
+        TweenMax.to('#loader', 0.75, {display:'none',opacity:0,ease:Expo.easeOut});
+    }, 250);
+});
+
+
 // Partie Collection single 
 $(document).ready(function(){
 	setSizeCollection();
