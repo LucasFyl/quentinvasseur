@@ -18,6 +18,8 @@
     </head>
     
     <body id="about"> 
+
+        <div id="loader"></div>
         
         <div class="container">
             <h1>Hi, my name is Quentin Vasseur</h1>
@@ -46,5 +48,6 @@
         <?php echo js('assets/js/vendor/jquery-1.9.1.min.js') ?>
         <?php echo js('assets/js/vendor/tweenmax.min.js') ?>
         <?php echo js('assets/js/main.js') ?>
+        <?php echo js('assets/js/about.js') ?>
     </body>
 </html>
