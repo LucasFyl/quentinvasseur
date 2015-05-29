@@ -18,6 +18,7 @@
     </head>
     
     <body id="illustrations"> 
+        <div id="loader"></div>
         <div id="sidebar">
             <a href="<?php echo $site->url() ?>" class="logo"></a>
 

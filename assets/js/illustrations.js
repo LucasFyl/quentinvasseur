@@ -44,18 +44,22 @@ function hoverOut() {
 }
 
 $(document).ready(function(){
-
-    settersCollection();
-    $(window).on('resize', ratioImage);
-
-    var tlCollections = new TimelineMax({paused:true});
-    tlCollections.set('#intro .text-fill', {opacity:0,width:'979px',top:'0',left:'280px',scale:0.5,marginTop:'-10px'})
-                 .set('#intro ', {height:'auto',delay:0.5,onComplete:ratioImage})
-                 .staggerTo('nav>ul>li', 0.55, {opacity:1,y:'0',ease:Power2.easeOut,delay:0.3}, -0.12)
-                 .to('#intro .text-fill', 0.5, {color:'#ffffff',ease:Power3.easeInOut});
-    tlCollections.play();
-
+  
+  $(window).on('resize', ratioImage);
 
   $('nav > ul > li > a').hoverIntent(hoverIn, hoverOut, '.hoverInfos');
 
 });
+
+$(window).load(function() { 
+
+  ratioImage();
+  settersCollection();    
+
+    setTimeout(function(){
+        TweenMax.to('#loader', 0.35, {display:'none',opacity:0,ease:Expo.easeOut});
+        TweenMax.staggerTo('nav>ul>li', 0.65, {opacity:1,y:'0',ease:Power2.easeOut,delay:0.6}, -0.15);
+    }, 250);
+});
+
+

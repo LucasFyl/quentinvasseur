@@ -568,6 +568,10 @@ body {
   margin: auto;
   min-height: 100%;
 }
+#illustrations nav ul li img {
+  bottom: auto !important;
+  top: -25% !important;
+}
 #collection {
   width: 100%;
   height: 100%;

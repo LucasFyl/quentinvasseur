@@ -18,6 +18,9 @@
     </head>
     
     <body id="collections"> 
+
+        <div id="loader"></div>
+    
         <div id="sidebar">
             <a href="<?php echo $site->url() ?>" class="logo"></a>
 
@@ -54,7 +57,6 @@
         <?php echo js('assets/js/vendor/hoverIntent.js') ?>
         <?php echo js('assets/js/main.js') ?>
         <?php echo js('assets/js/collections.js') ?>
-
 
     </body>
 </html>
