@@ -6,7 +6,8 @@ password: >
   $2a$10$C9OxmQEzkQYCSKNtVssfkuMz5xC/pJKhbAkEBUNz6lHxVbsSlWSEu
 language: fr
 role: admin
-token: 88c91a6227a1bf2ee1d269c20cecdae4594a3643
+token: 8112198ea8812c4a6a864f6cc6ecfe8e3b369223
 history:
+  - about
   - work/collections/bikers-bw
   - work/collections

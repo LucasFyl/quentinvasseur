@@ -22,17 +22,17 @@
         <div id="loader"></div>
         
         <div class="container">
-            <h1>Hi, my name is Quentin Vasseur</h1>
-            <h2>Et je parle très bien Latin.</h2>
+            <h1><?php echo $page->mainTitle1() ?></h1>
+            <h2><?php echo $page->mainTitle2() ?></h2>
 
             <div class="description">
                 <span>
-                    <h3>Lorem Ipsum dolor sit amet</h3>
-                    <p>Labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>    
+                    <h3><?php echo $page->smallTitle1() ?></h3>
+                    <p><?php echo $page->textCol1() ?></p>    
                 </span>
                 <span>
-                    <h3>Consectetur adipiscing elit</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>    
+                    <h3><?php echo $page->smallTitle2() ?></h3>
+                    <p><?php echo $page->textCol2() ?></p>    
                 </span>
                 
                 </div>
