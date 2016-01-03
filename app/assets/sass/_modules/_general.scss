@@ -1,0 +1,42 @@
+
+.main {
+  
+}
+
+.btn {
+  display: inline-block;
+  position: relative;
+  padding: 1.7rem 3rem;
+
+  font-size: 1.4rem;
+  text-align: center;
+  text-decoration: none;
+
+  background-color: $grey;
+  color: $dark;
+
+  &.cta {
+    text-align: left;
+    padding-right: 5rem;
+    &:after {
+      position: absolute;
+      right: 3rem;
+      content: "\2192";
+      opacity: 0;
+
+      @include transition(all 0.25s ease-out);
+    }
+    &:hover {
+      &:after {
+        opacity: 1;
+        right: 2rem;
+      }
+    }
+  }
+
+  &.golden {
+    color: white !important;
+    background-color: $golden !important;
+  }
+
+}
