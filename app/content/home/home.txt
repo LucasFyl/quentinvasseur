@@ -1,5 +1,9 @@
-Title: Quentin Vasseur - Portfolio
+Title: Quentin Vasseur
 
 ----
 
-Text: 
+Text: Junior fashion designer - This is my personal portfolio
+
+----
+
+Baseline: Junior fashion design - This is my personal portfolio

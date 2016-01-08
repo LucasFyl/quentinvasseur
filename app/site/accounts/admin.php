@@ -7,4 +7,4 @@ password: >
 language: en
 role: admin
 history:
-  - contact
+  - home

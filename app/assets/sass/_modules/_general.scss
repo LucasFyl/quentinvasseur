@@ -1,6 +1,6 @@
 
 .main {
-  
+
 }
 
 .btn {
@@ -12,8 +12,8 @@
   text-align: center;
   text-decoration: none;
 
-  background-color: $grey;
-  color: $dark;
+  // background-color: $grey;
+  // color: $dark;
 
   &.cta {
     text-align: left;
@@ -36,7 +36,7 @@
 
   &.golden {
     color: white !important;
-    background-color: $golden !important;
+    // background-color: $golden !important;
   }
 
 }

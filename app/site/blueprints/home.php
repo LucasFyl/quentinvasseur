@@ -7,6 +7,5 @@ fields:
     label: Title
     type:  text
   text:
-    label: Text
-    type:  textarea
-    size:  large
+    label: Baseline
+    type:  text

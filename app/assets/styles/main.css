@@ -734,7 +734,7 @@ th {
  * Base styles ~ Type
  */
 body {
-  color: #c5c6c9;
+  color: #cacaca;
 }
 
 a {
@@ -748,10 +748,10 @@ h4, .h4,
 h5, .h5,
 h6, .h6 {
   margin: 14px 0;
-  font-family: "Playfair Display", garamond, serif;
+  font-family: "Lato", garamond, serif;
   font-weight: normal;
   font-style: normal;
-  color: #293443;
+  color: #C1C1C1;
   text-rendering: optimizeLegibility;
 }
 
@@ -845,8 +845,6 @@ small {
   font-size: 1.4rem;
   text-align: center;
   text-decoration: none;
-  background-color: #c5c6c9;
-  color: #293443;
 }
 .btn.cta {
   text-align: left;
@@ -865,87 +863,4 @@ small {
 }
 .btn.golden {
   color: white !important;
-  background-color: #d2bb71 !important;
-}
-
-header {
-  padding-top: 4rem;
-  position: fixed;
-  z-index: 99;
-  width: 100%;
-  top: 0;
-}
-header a.logo {
-  display: inline-block;
-  float: left;
-  color: white;
-  font-size: 18px;
-  line-height: 14px;
-  font-size: 1.8rem;
-  line-height: 1.4rem;
-  font-family: "Playfair Display", garamond, serif;
-  font-style: italic;
-  text-decoration: none;
-}
-header nav {
-  display: inline-block;
-  float: right;
-}
-header nav ul {
-  list-style: none;
-  padding: 0;
-}
-header nav ul li {
-  display: inline-block;
-  margin-right: 4rem;
-}
-header nav ul li a {
-  display: block;
-  font-size: 14px;
-  line-height: 14px;
-  font-size: 1.4rem;
-  line-height: 1.4rem;
-  color: white;
-  text-decoration: none;
-}
-
-footer {
-  height: 7rem;
-}
-footer::after {
-  clear: both;
-  content: "";
-  display: table;
-}
-footer div {
-  height: 7rem;
-}
-footer div > p {
-  font-size: 13px;
-  line-height: 70px;
-  font-size: 1.3rem;
-  line-height: 7rem;
-  font-family: "Playfair Display", garamond, serif;
-  color: #293443;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-footer div ul {
-  list-style: none;
-  float: right;
-  padding: 0;
-  margin: 0;
-}
-footer div ul li {
-  display: inline-block;
-  margin-right: 2rem;
-}
-footer div ul li a {
-  display: inline-block;
-  line-height: 7rem;
-}
-footer div ul li a img {
-  height: 1.4rem;
-  width: 1.4rem;
-  vertical-align: middle;
 }

@@ -1,25 +1,10 @@
-<!doctype html>
-<html class="no-js" lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <meta name="author" content="Lucas Fayolle">
-        <meta name="description" content="<?php echo $site->description()->html() ?>">
-        <meta name="keywords" content="<?php echo $site->keywords()->html() ?>">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title><?php echo $site->title()->html() ?> | <?php echo $page->title()->html() ?></title>
+<header>
+  <div class="container">
+    <h1><a href="<?php echo $site->url() ?>" class="logo"><?php echo $page->title() ?></a></h1>
+    <?php echo $page->text()->kirbytext() ?>
 
-
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-        <link rel="shortcut icon" href="/favicon.ico">
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-
-        <!-- build:css(.tmp) styles/main.css -->
-        <?php echo css('assets/styles/main.css') ?>
-        <!-- endbuild -->
-
-    </head>
-    <body>
-        <!--[if lt IE 10]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+    <div class="about-wrap">
+      <a <?php e($page->id() === 'about', ' class="active"') ?> href="<?php echo $pages->find('about')->url() ?>">About</a>
+    </div>
+  </div>
+</header>

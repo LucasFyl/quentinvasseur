@@ -23,16 +23,14 @@ $large: new-breakpoint(min-width 1200px);
 /**
  * Base styles 		~	 	Colours
  */
-$dark: #293443;
-$grey: #c5c6c9;
-$golden: #d2bb71;
 $link-color: #293443;
 $hover-color: lighten($link-color, 10);
-$heading-color: $dark;
+$heading-color: #C1C1C1;
+$grey: #cacaca;
 $hr-color: #fff;
 
 /**
  * Base styles 		~	 	Type
  */
 $base-font: 'Lato', helvetica, sans-serif;
-$title-font: 'Playfair Display', garamond, serif;
+$title-font: 'Lato', garamond, serif;

@@ -1,4 +1,5 @@
 
+      <?= js('./bower_components/jquery/dist/jquery.js') ?>
       <?= js('assets/scripts/main.js') ?>
 
 
