@@ -1,6 +1,9 @@
-<header>
+<header class="<?php echo $page->id() ?>">
   <div class="container">
-    <h1><a href="<?php echo $site->url() ?>" class="logo"><?php echo $page->title() ?></a></h1>
+    <?php if($page->id() !== 'home'): ?>
+    <h2><a href="<?php echo $site->url() ?>">Quentin Vasseur</a></h2>
+    <?php endif; ?>
+    <h1><?php echo $page->title() ?></h1> <!-- Quentin Vasseur, Collections, Illus etc.. -->
     <?php echo $page->text()->kirbytext() ?>
 
     <div class="about-wrap">

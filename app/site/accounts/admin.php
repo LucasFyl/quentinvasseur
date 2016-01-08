@@ -7,4 +7,7 @@ password: >
 language: en
 role: admin
 history:
+  - sneakers
+  - illustrations
+  - collections
   - home
