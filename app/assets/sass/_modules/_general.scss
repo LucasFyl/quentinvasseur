@@ -9,7 +9,7 @@ body {
   position: relative;
   z-index:9;
 
-  background-color: #eee;
+  background-color: #323232;
 
   @include media($desktop) {
     top: 50vh;
@@ -18,7 +18,7 @@ body {
 
   > section {
     min-height: 50vh;
-    border-bottom: 1px solid #cecece;
+    border-bottom: 1px solid darken(#323232, 10);
     .container {
       height: 50vh;
       overflow: auto;
@@ -27,12 +27,25 @@ body {
       h2 {
         margin-top: 0;
         text-transform: uppercase;
+        font-size: 9rem;
+        line-height: 1;
       }
       a {
+        // float: right;
+        font-size: 3.2rem;
+        font-family: $book;
 
+        display: block;
+        padding: 0 3rem 0 1rem;
+        margin-top: 5rem;
       }
     }
 
+  }
+}
+main.home {
+  a {
+    float: right;
   }
 }
 

@@ -6,8 +6,16 @@
     <h1><?php echo $page->title() ?></h1> <!-- Quentin Vasseur, Collections, Illus etc.. -->
     <?php echo $page->text()->kirbytext() ?>
 
+    <?php if($page->id() !== 'about'): ?>
     <div class="about-wrap">
-      <a <?php e($page->id() === 'about', ' class="active"') ?> href="<?php echo $pages->find('about')->url() ?>">About</a>
+      <a href="<?php echo $pages->find('about')->url() ?>">About</a>
     </div>
+    <?php else: ?>
+    <div class="about-wrap">
+      <a href="<?php echo $pages->find('home')->url() ?>">Home</a>
+    </div>
+    <?php endif; ?>
+
+
   </div>
 </header>

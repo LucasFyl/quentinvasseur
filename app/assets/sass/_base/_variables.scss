@@ -5,7 +5,7 @@ $gutter: 0.3em;
 $border-box-sizing: true;
 $grid-columns: 12 !default;
 // $max-width: 77.2%;
-$max-width: 76.3%;
+$max-width: 90%;
 $visual-grid: true;
 $visual-grid-color: red;
 $visual-grid-index: front;
@@ -23,14 +23,16 @@ $large: new-breakpoint(min-width 1200px);
 /**
  * Base styles 		~	 	Colours
  */
-$link-color: #293443;
-$hover-color: lighten($link-color, 10);
-$heading-color: #C1C1C1;
+$link-color: darken(#fff, 2%);
+$hover-color: lighten($link-color, 2%);
+$heading-color: #fff;
 $grey: #cacaca;
 $hr-color: #fff;
+$background: #000;
 
 /**
  * Base styles 		~	 	Type
  */
-$base-font: 'Lato', helvetica, sans-serif;
-$title-font: 'Lato', garamond, serif;
+$base-font: 'GothamBold', helvetica, sans-serif;
+$title-font: 'GothamBold', helvetica, sans-serif;
+$book: 'GothamBook', helvetica, sans-serif;
