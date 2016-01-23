@@ -68,7 +68,7 @@ gulp.task('clean', require('del').bind(null, ['.tmp', 'dist']));
 // Watch Files For Changes & Reload
 gulp.task('serve', ['styles'], function () {
   browserSync.init({
-    proxy: 'quentin.dev'
+    proxy: 'irradie.dev'
   });
   // browserSync({
   //   notify: false,
