@@ -4,6 +4,9 @@ header {
   width: 100%;
   position: relative;
   z-index: 9;
+  &.home {
+    z-index: 10;
+  }
   @include media($desktop) {
     position: fixed;
   }
@@ -25,12 +28,12 @@ header {
     text-decoration: none;
   }
 
-  &.home-header {
-    display: none;
-  }
-  // &.home-header + &.home {
+  // &.home-header {
   //   display: none;
   // }
+  &.home-header + &.home {
+    display: none;
+  }
   height: $headerH;
   background:white;
   .logo {
@@ -39,6 +42,7 @@ header {
     background:url(../images/logo-qv.svg) no-repeat 2rem center;
     background-size: $headerH;
     text-indent: -9999px;
+    a {display: block;@include size(100%);}
   }
   display: flex;
 

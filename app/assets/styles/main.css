@@ -862,6 +862,9 @@ header {
   background: white;
   display: flex;
 }
+header.home {
+  z-index: 10;
+}
 @media screen and (min-width: 480px) {
   header {
     position: fixed;
@@ -882,7 +885,7 @@ header p {
 header h1 a, header h2 a {
   text-decoration: none;
 }
-header.home-header {
+header.home-header + header.home {
   display: none;
 }
 header .logo {
@@ -892,6 +895,11 @@ header .logo {
   background: url(../images/logo-qv.svg) no-repeat 2rem center;
   background-size: 5rem;
   text-indent: -9999px;
+}
+header .logo a {
+  display: block;
+  height: 100%;
+  width: 100%;
 }
 header nav {
   padding: 0 2rem;
@@ -929,12 +937,37 @@ main {
   overflow: hidden;
   position: relative;
   z-index: 5;
-  background-color: #323232;
 }
 @media screen and (min-width: 480px) {
   main {
     top: 5rem;
   }
+}
+
+main.home > section {
+  min-height: 35vh;
+  border-bottom: 1px solid #191919;
+}
+main.home > section .container {
+  height: 35vh;
+  overflow: auto;
+}
+main.home > section .container a {
+  display: block;
+  text-decoration: none;
+  height: 100%;
+  width: 100%;
+}
+main.home > section .container h2 {
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 9rem;
+  line-height: 35vh;
+}
+
+main.about {
+  color: white;
+  padding: 5rem;
 }
 
 main.work {

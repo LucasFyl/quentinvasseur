@@ -1,3 +1,22 @@
-#content.home {
-
+main.home {
+  > section {
+    min-height: 35vh;
+    border-bottom: 1px solid darken(#323232, 10);
+    .container {
+    	height: 35vh;
+    	overflow: auto;
+    	.vertical-center { }
+		a {
+			display: block; 
+	        text-decoration: none;
+			@include size(100%);
+		}
+    	h2 {
+	        margin: 0;
+	        text-transform: uppercase;
+	        font-size: 9rem;
+	        line-height: 35vh;
+    	}
+    }
+  }
 }
