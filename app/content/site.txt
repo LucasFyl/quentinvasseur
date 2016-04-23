@@ -1,16 +1,16 @@
-Title: Kirby Starterkit
+Title: Quentin Vasseur - Portfolio
 
 ----
 
-Author: Bastian Allgeier GmbH
+Author: Lucas Fayolle
 
 ----
 
-Description: This is Kirby's Starterkit.
+Description: Portfolio de Quentin Vasseur
 
 ----
 
-Keywords: Kirby, CMS, file-based
+Keywords: portfolio,fashion,design,graphic,collection,sneakers,illustrations
 
 ----
 

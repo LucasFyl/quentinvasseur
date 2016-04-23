@@ -38,9 +38,7 @@ abstract class ChildrenAbstract extends Pages {
    * @param array $data
    */
   public function create($uid, $template, $data = array()) {
-    $page = page::create($this->page->id() . '/' . $uid, $template, $data);
-    $this->data[$page->id()] = $page;
-    return $page;
+    return page::create($this->page->id() . '/' . $uid, $template, $data);
   }
 
   /**

@@ -231,25 +231,26 @@ abstract class PageAbstract {
   }
 
   /**
+   * Returns the cache id
+   *
+   * @return string
+   */
+  public function cacheId() {
+    return sha1($this->id());
+  }
+
+  /**
    * Checks if the page can be cached
    *
    * @return boolean
    */
   public function isCachable() {
-
-    // The error page should not be cached
-    if($this->isErrorPage()) {
-      return false;
-    }
-
     foreach($this->kirby->option('cache.ignore') as $pattern) {
       if(fnmatch($pattern, $this->uri()) === true) {
         return false;
       }
     }
-
     return true;
-
   }
 
   /**
@@ -301,11 +302,6 @@ abstract class PageAbstract {
       'thumbs'   => array(),
       'files'    => array(),
     );
-
-    // normalize the filename if possible
-    if($this->kirby->option('content.file.normalize') && class_exists('Normalizer')) {
-      $items = array_map('Normalizer::normalize', $items);
-    }
 
     foreach($items as $item) {
 
@@ -442,9 +438,8 @@ abstract class PageAbstract {
    * @param string $direction An optional sort direction
    * @return mixed Page or null
    */
-  protected function _next(Children $siblings, $sort = array(), $visibility = false) {
-
-    if($sort) $siblings = call(array($siblings, 'sortBy'), $sort);
+  protected function _next(Children $siblings, $sort = false, $direction = 'asc', $visibility = false) {
+    if($sort) $siblings = $siblings->sortBy($sort, $direction);
     $index = $siblings->indexOf($this);
     if($index === false) return null;
     if($visibility) {
@@ -464,8 +459,8 @@ abstract class PageAbstract {
    * @param string $direction An optional sort direction
    * @return mixed Page or null
    */
-  protected function _prev(Children $siblings, $sort = array(), $visibility = false) {
-    if($sort) $siblings = call(array($siblings, 'sortBy'), $sort);
+  protected function _prev(Children $siblings, $sort = false, $direction = 'asc', $visibility = false) {
+    if($sort) $siblings = $siblings->sortBy($sort, $direction);
     $index = $siblings->indexOf($this);
     if($index === false or $index === 0) return null;
     if($visibility) {
@@ -482,8 +477,8 @@ abstract class PageAbstract {
    *
    * @return Page
    */
-  public function next() {
-    return $this->_next($this->parent->children(), func_get_args());
+  public function next($sort = false, $direction = 'asc') {
+    return $this->_next($this->parent->children(), $sort, $direction);
   }
 
   /**
@@ -493,8 +488,8 @@ abstract class PageAbstract {
    * @param string $direction An optional sort direction
    * @return boolean
    */
-  public function hasNext() {
-    return call(array($this, 'next'), func_get_args()) != null;
+  public function hasNext($sort = false, $direction = 'asc') {
+    return $this->next($sort, $direction) != null;
   }
 
   /**
@@ -504,11 +499,11 @@ abstract class PageAbstract {
    * @param string $direction An optional sort direction
    * @return mixed Page or null
    */
-  public function nextVisible() {
+  public function nextVisible($sort = false, $direction = 'asc') {
     if(!$this->parent) {
       return null;
     } else {
-      return $this->_next($this->parent->children(), func_get_args(), 'visible');
+      return $this->_next($this->parent->children(), $sort, $direction, 'visible');      
     }
   }
 
@@ -519,8 +514,8 @@ abstract class PageAbstract {
    * @param string $direction An optional sort direction
    * @return boolean
    */
-  public function hasNextVisible() {
-    return call(array($this, 'nextVisible'), func_get_args()) != null;
+  public function hasNextVisible($sort = false, $direction = 'asc') {
+    return $this->nextVisible($sort, $direction) != null;
   }
 
   /**
@@ -530,11 +525,11 @@ abstract class PageAbstract {
    * @param string $direction An optional sort direction
    * @return mixed Page or null
    */
-  public function nextInvisible() {
+  public function nextInvisible($sort = false, $direction = 'asc') {
     if(!$this->parent) {
       return null;
     } else {
-      return $this->_next($this->parent->children(), func_get_args(), 'invisible');
+      return $this->_next($this->parent->children(), $sort, $direction, 'invisible');
     }
   }
 
@@ -545,8 +540,8 @@ abstract class PageAbstract {
    * @param string $direction An optional sort direction
    * @return boolean
    */
-  public function hasNextInvisible() {
-    return call(array($this, 'nextInvisible'), func_get_args()) != null;
+  public function hasNextInvisible($sort = false, $direction = 'asc') {
+    return $this->nextInvisible($sort, $direction) != null;
   }
 
   /**
@@ -554,8 +549,8 @@ abstract class PageAbstract {
    *
    * @return Page
    */
-  public function prev() {
-    return $this->_prev($this->parent->children(), func_get_args());
+  public function prev($sort = false, $direction = 'asc') {
+    return $this->_prev($this->parent->children(), $sort, $direction);
   }
 
   /**
@@ -565,8 +560,8 @@ abstract class PageAbstract {
    * @param string $direction An optional sort direction
    * @return boolean
    */
-  public function hasPrev() {
-    return call(array($this, 'prev'), func_get_args()) != null;
+  public function hasPrev($sort = false, $direction = 'asc') {
+    return $this->prev($sort, $direction) != null;
   }
 
   /**
@@ -576,11 +571,11 @@ abstract class PageAbstract {
    * @param string $direction An optional sort direction
    * @return mixed Page or null
    */
-  public function prevVisible() {
+  public function prevVisible($sort = false, $direction = 'asc') {
     if(!$this->parent) {
       return null;
     } else {
-      return $this->_prev($this->parent->children(), func_get_args(), 'visible');
+      return $this->_prev($this->parent->children(), $sort, $direction, 'visible');
     }
   }
 
@@ -591,8 +586,8 @@ abstract class PageAbstract {
    * @param string $direction An optional sort direction
    * @return boolean
    */
-  public function hasPrevVisible() {
-    return call(array($this, 'prevVisible'), func_get_args()) != null;
+  public function hasPrevVisible($sort = false, $direction = 'asc') {
+    return $this->prevVisible($sort, $direction) != null;
   }
 
   /**
@@ -602,11 +597,11 @@ abstract class PageAbstract {
    * @param string $direction An optional sort direction
    * @return mixed Page or null
    */
-  public function prevInvisible() {
+  public function prevInvisible($sort = false, $direction = 'asc') {
     if(!$this->parent) {
       return null;
     } else {
-      return $this->_prev($this->parent->children(), func_get_args(), 'invisible');
+      return $this->_prev($this->parent->children(), $sort, $direction, 'invisible');
     }
   }
 
@@ -617,8 +612,8 @@ abstract class PageAbstract {
    * @param string $direction An optional sort direction
    * @return boolean
    */
-  public function hasPrevInvisible() {
-    return call(array($this, 'prevInvisible'), func_get_args()) != null;
+  public function hasPrevInvisible($sort = false, $direction = 'asc') {
+    return $this->prevInvisible($sort, $direction) != null;
   }
 
   /**
@@ -723,18 +718,18 @@ abstract class PageAbstract {
    *
    * @param string $format
    * @param string $field
-   * @return mixed
+   * @return string
    */
   public function date($format = null, $field = 'date') {
 
     if($timestamp = strtotime($this->content()->$field())) {
+
       if(is_null($format)) {
         return $timestamp;
       } else {
         return $this->kirby->options['date.handler']($format, $timestamp);
       }
-    } else {
-      return false;
+
     }
 
   }

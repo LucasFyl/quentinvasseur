@@ -14,10 +14,10 @@
  */
 class Database {
 
-  public static $connectors = array();
+  static public $connectors = array();
 
   // a global array of started connections
-  public static $connections = array();
+  static public $connections = array();
 
   // the established connection
   protected $connection;
@@ -27,9 +27,6 @@ class Database {
 
   // the database type (mysql, sqlite)
   protected $type;
-
-  // the connection id
-  protected $id;
 
   // the optional prefix for table names
   protected $prefix;
@@ -71,7 +68,7 @@ class Database {
    * @param string $id
    * @return object
    */
-  public static function instance($id = null) {
+  static public function instance($id = null) {
     return (is_null($id)) ? a::last(static::$connections) : a::get(static::$connections, $id);
   }
 
@@ -80,7 +77,7 @@ class Database {
    *
    * @return array
    */
-  public static function instances() {
+  static public function instances() {
     return static::$connections;
   }
 
@@ -315,7 +312,7 @@ class Database {
     }
 
     // fetch that stuff
-    $results = $this->statement->{$options['method']}();
+    $results = $this->statement->$options['method']();
 
     if($options['iterator'] == 'array') return $this->lastResult = $results;
     return $this->lastResult = new $options['iterator']($results);
@@ -391,7 +388,7 @@ class Database {
  */
 database::$connectors['mysql'] = function($params) {
 
-  if(!isset($params['host']) && !isset($params['socket'])) {
+  if(!isset($params['host']) and !isset($params['socket'])) {
     throw new Error('The mysql connection requires either a "host" or a "socket" parameter');
   } 
   

@@ -154,35 +154,14 @@ abstract class FileAbstract extends Media {
   }
 
   /**
-   * Generates a new filename for a given name
-   * and makes sure to handle badly given extensions correctly
-   * 
-   * @param string $name
-   * @return string
-   */
-  public function createNewFilename($name, $safeName = true) {
-
-    $name = basename($safeName ? f::safeName($name) : $name);
-    $ext  = f::extension($name);
-
-    // remove possible extensions
-    if(in_array($ext, f::extensions())) {
-      $name = f::name($name);      
-    }
-
-    return trim($name . '.' . $this->extension(), '.');
-
-  }
-
-  /**
    * Renames the file and also its meta info txt
    *
    * @param string $filename
-   * @param boolean $safeName
    */
-  public function rename($name, $safeName = true) {
+  public function rename($name) {
 
-    $filename = $this->createNewFilename($name, $safeName);
+    $name     = f::safeName($name);
+    $filename = $name . '.' . $this->extension();
     $root     = $this->dir() . DS . $filename;
 
     if(empty($name)) {
@@ -207,12 +186,6 @@ abstract class FileAbstract extends Media {
 
     // reset the page cache
     $this->page->reset();
-
-    // reset the basics
-    $this->root     = $root;
-    $this->filename = $filename;
-    $this->name     = $name;
-    $this->cache    = array();
 
     cache::flush();
 
@@ -254,6 +227,32 @@ abstract class FileAbstract extends Media {
 
     cache::flush();
     return true;
+
+  }
+
+  public function resize($width, $height = null, $quality = null) {
+
+    if($this->type() != 'image') return $this;
+
+    $params = array('width' => $width);
+
+    if($height)  $params['height']  = $height;
+    if($quality) $params['quality'] = $quality;
+
+    return thumb($this, $params);
+
+  }
+
+  public function crop($width, $height = null, $quality = null) {
+
+    if($this->type() != 'image') return $this;
+
+    $params = array('width' => $width, 'crop' => true);
+
+    if($height)  $params['height']  = $height;
+    if($quality) $params['quality'] = $quality;
+
+    return thumb($this, $params);
 
   }
 

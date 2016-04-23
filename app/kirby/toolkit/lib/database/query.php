@@ -79,7 +79,7 @@ class Query {
   protected $debug = false;
 
   // an array with reserved sql values
-  protected static $literals = array('NOW()');
+  static protected $literals = array('NOW()');
 
   /**
    * Constructor
@@ -341,9 +341,9 @@ class Query {
 
         } else if(is_callable($args[0])) {
 
-          $query = clone $this;
-          call_user_func($args[0], $query);
-          $where = '(' . $query->where . ')';
+          $query  = clone $this;
+          $result = call_user_func($args[0], $query);
+          $where  = '(' . $query->where . ')';
 
         }
 
@@ -540,6 +540,7 @@ class Query {
           'limit'    => $this->limit
         ));
 
+        break;
       case 'update':
 
         return $sql->update(array(
@@ -548,6 +549,7 @@ class Query {
           'values' => $this->values,
         ));
 
+        break;
       case 'insert':
 
         return $sql->insert(array(
@@ -555,6 +557,7 @@ class Query {
           'values' => $this->values,
         ));
 
+        break;
       case 'delete':
 
         return $sql->delete(array(
@@ -562,6 +565,7 @@ class Query {
           'where' => $this->where,
         ));
 
+        break;
     }
 
   }
@@ -625,9 +629,6 @@ class Query {
    * @return object
    */
   public function aggregate($method, $column = '*', $default = 0) {
-
-    // reset the sorting to avoid counting issues
-    $this->order = null;
 
     $fetch  = $this->fetch;
     $row    = $this->select($method . '(' . $column . ') as aggregation')->fetch('Obj')->first();
