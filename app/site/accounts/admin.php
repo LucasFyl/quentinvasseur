@@ -8,7 +8,4 @@ language: en
 role: admin
 history:
   - about
-  - sneakers
-  - illustrations
-  - collections
   - home

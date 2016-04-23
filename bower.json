@@ -1,10 +1,10 @@
 {
-  "name": "Quentin Vasseur",
-  "homepage": "https://github.com/LucasFyl/quentinvasseur",
+  "name": "Irradié",
+  "homepage": "https://github.com/LucasFyl/irradie",
   "authors": [
     "Lucas Fayolle <lfayolle1@gmail.com>"
   ],
-  "description": "Portfolio 2016 - Quentin Vasseur",
+  "description": "...",
   "main": "app/index.php",
   "moduleType": [
     "amd",
