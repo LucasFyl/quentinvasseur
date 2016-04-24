@@ -995,3 +995,35 @@ main.work > section:before {
   padding-top: 50%;
   float: left;
 }
+
+main.projects {
+  min-height: calc(100vh - 5rem);
+}
+main.projects .projects-nav {
+  float: left;
+  display: block;
+  margin-right: 2.3576515979%;
+  width: 31.7615656014%;
+  max-width: 40rem;
+  height: calc(100vh - 5rem);
+  overflow: auto;
+  border-right: 1px solid white;
+}
+main.projects .projects-nav:last-child {
+  margin-right: 0;
+}
+main.projects .projects-nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+main.projects .projects-nav ul li {
+  height: 10rem;
+  border-bottom: 1px solid white;
+  cursor: pointer;
+}
+main.projects .projects-nav ul li h3 {
+  line-height: 10rem;
+  padding-left: 2rem;
+  margin: 0;
+}
