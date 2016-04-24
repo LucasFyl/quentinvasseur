@@ -976,6 +976,7 @@ main.work {
   margin: 0;
 }
 main.work > section {
+  position: relative;
   background: tomato;
   color: white;
   font-size: 2.1rem;
@@ -994,6 +995,15 @@ main.work > section:before {
   display: block;
   padding-top: 50%;
   float: left;
+}
+main.work > section .vertical-center {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+}
+main.work > section h2 {
+  margin-top: 0;
+  line-height: 1;
 }
 
 main.projects {
