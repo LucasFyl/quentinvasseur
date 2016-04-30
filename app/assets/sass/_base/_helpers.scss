@@ -10,3 +10,15 @@
       @include transition(all 0.25s $ease-out-sine);
     }
 }
+
+
+@mixin center($value) {
+  @if $value == 'vertical' {
+    position: relative; top: 50%;
+    @include transform(translateY(-50%));
+  }
+  @else if $value == 'horizontal' {
+    position: relative; left: 50%;
+    @include transform(translateX(-50%));
+  }
+}

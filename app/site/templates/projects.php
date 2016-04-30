@@ -16,13 +16,18 @@
 		</aside>
 		
 		<div class="projects-gallery">
-			<?php foreach($page->children()->visible() as $subpage): ?>
-			<ul class="<?php echo $subpage->title() ?>">
-				<?php foreach($subpage->images() as $image): ?>
-				<li><img src="<?php echo $image->url() ?>" alt="<?php echo $subpage->title() ?>"></li>
+			<ul class="sliders-slider">
+				<?php foreach($page->children()->visible() as $subpage): ?>
+				<li>
+					<ul class="<?php echo $subpage->title() ?>">
+						<?php foreach($subpage->images() as $image): ?>
+						<li><img src="<?php echo $image->url() ?>" alt="<?php echo $subpage->title() ?>"></li>
+						<?php endforeach; ?>
+					</ul>
+				</li>
 				<?php endforeach; ?>
 			</ul>
-			<?php endforeach; ?>
+			
 		</div>			
 
 	</main>

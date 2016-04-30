@@ -17,58 +17,78 @@ function initPage(){
 	// detectMobile();
 	// hideLoader();
 
-	if ( $('#content.villas').length ) {
-		initSlickSliders();
+	if ( $('main.projects').length ) {
+		initProjectsPage();
 	}
 	// } else if ( $('#content.work').length ) {
 	// } else if ( $('#content.about').length ) {
 	// } else if ( $('#content.contact').length ) {
 	// }
 }
-function initSlickSliders() {
+function initProjectsPage() {
 	'use strict';
-	$('.main article').each(function(){
-		var _this = $(this),
-				slidernav = _this.find('.slider-nav'),
-				sliderfor = _this.find('.slider-for');
-		sliderfor.slick({
-		  slidesToShow: 1,
-		  slidesToScroll: 1,
-		  arrows: false,
-		  fade: true,
-		  asNavFor: slidernav
-		});
-		slidernav.slick({
-		  slidesToShow: 5,
-		  slidesToScroll: 1,
-		  asNavFor: sliderfor,
-		  dots: false,
-		  centerMode: false,
-		  focusOnSelect: true,
-			draggable: false
-		});
+	var mainNav = $('.projects-nav'),
+		gallery = $('.projects-gallery');
 
+
+	$('.sliders-slider').slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		arrows: false,
+		dots: false,
+		fade: true,
+		asNavFor: '.projects-nav ul'
 	});
-	// $('.slider-for').each(function(){
-	// 	var _this = $(this);
-	// 	_this.slick({
-	// 	  slidesToShow: 1,
-	// 	  slidesToScroll: 1,
-	// 	  arrows: false,
-	// 	  fade: true,
-	// 	  asNavFor: '.slider-nav'
-	// 	});
+	$('.sliders-slider ul').slick({
+		arrows: true,
+		dots: false,
+		fade: true,
+		autoplay: true,
+		speed: 1000,
+		autoplaySpeed: 4000
+	});
+	$('.projects-nav ul').slick({
+		slidesToShow: 40,
+		slidesToScroll: 1,
+		asNavFor: '.sliders-slider',
+		dots: false,
+		centerMode: false,
+		focusOnSelect: true
+	});
+
+
+	// // set first item as active
+	// mainNav.find('li:first-child').addClass('active');
+	// gallery.find('ul:first-child').addClass('active');
+
+	// mainNav.on('click', 'li', function(){
+	// 	mainNav.find('li').removeClass('active');
+	// 	$(this).addClass('active');
+
+	// 	var str1 = $(this).find('h3').text();
+	// 	console.log(str1);
+	// 	// var str2 = $('.projects-gallery ul').map(function () {
+	// 	// 			    return $(this).attr('class');
+	// 	// 			}).get();
+	// 	// console.log(str1, str2)	;
+
+	// 	// if ( str1.search(str2) != -1 ) {
+	// 	// 	alert('match!');
+	// 	// }
+	// 	// sttr1.search(str2); // returns -1 if false
 	// });
-	// $('.slider-nav').each(function(){
+
+
+	// $('.projects-gallery ul').each(function(){
 	// 	var _this = $(this);
+
 	// 	_this.slick({
-	// 	  slidesToShow: 5,
-	// 	  slidesToScroll: 1,
-	// 	  asNavFor: '.slider-for',
+	// 	  arrows: true,
 	// 	  dots: false,
-	// 	  centerMode: false,
-	// 	  focusOnSelect: true
+	// 	  fade: true,
+	// 	  autoplay: true
 	// 	});
+
 	// });
 }
 function detectMobile(){

@@ -9,9 +9,10 @@ main.projects {
 
 	.projects-nav {
 		@include span-columns(4);
-		max-width: 40rem;
+		width: 40rem;
 		height: calc(100vh - 5rem);
 		overflow: auto;
+		margin-right: 0;
 
 		border-right: 1px solid white;
 
@@ -20,10 +21,11 @@ main.projects {
 			li {
 				height: 10rem;
 				border-bottom: 1px solid white;
-				@include overlay(rgba(0,0,0,0.75));
+				@include overlay(rgba(0,0,0,0.65));
 				position: relative; 
 				overflow: hidden;
 				cursor: pointer;
+				outline:none;
 
 				img {
 					position: absolute;
@@ -51,17 +53,32 @@ main.projects {
 						@include transform(scale(1.2));
 					}
 				}
+
+				&.active {
+					@include overlay(rgba(255,99,71,0.5));
+					img {
+						@include transform(scale(2));
+						opacity: .2;
+					}
+				}
 			}
 		}
 	}	
 	.projects-gallery {
 		@include span-columns(8);
 		height: calc(100vh - 5rem);
+		width: calc(100vw - 40rem);
 		overflow: hidden;
 
 		ul {
-
+			
+			// &.active {
+			// 	display: block;
+			// 	@include center(vertical);
+			// }
+			
 			li {
+
 			}
 		}
 	}

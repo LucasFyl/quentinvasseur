@@ -59,6 +59,13 @@
     .slick-loading & {
         visibility: hidden;
     }
+
+    //override
+    .projects-nav & {
+
+        width: 100% !important;
+        height: calc(100vh - 5rem);
+    }
 }
 .slick-slide {
     float: left;
@@ -92,6 +99,14 @@
         display: block;
         height: auto;
         border: 1px solid transparent;
+    }
+
+    
+    //override
+    .projects-nav & {
+
+        width: 100% !important;
+        height: 10rem !important;
     }
 }
 .slick-arrow.slick-hidden {
