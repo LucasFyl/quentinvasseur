@@ -42,10 +42,12 @@ function initProjectsPage() {
 	$('.sliders-slider ul').slick({
 		arrows: true,
 		dots: false,
-		fade: true,
 		autoplay: true,
 		speed: 1000,
-		autoplaySpeed: 4000
+		fade: true,
+		autoplaySpeed: 4000,
+		prevArrow: '<a href="#" class="arrow prev"><span>Prev Slide</span></a>',
+		nextArrow: '<a href="#" class="arrow next"><span>Next Slide</span></a>'
 	});
 	$('.projects-nav ul').slick({
 		slidesToShow: 40,

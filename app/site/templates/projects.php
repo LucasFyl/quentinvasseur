@@ -16,6 +16,7 @@
 		</aside>
 		
 		<div class="projects-gallery">
+			
 			<ul class="sliders-slider">
 				<?php foreach($page->children()->visible() as $subpage): ?>
 				<li>
