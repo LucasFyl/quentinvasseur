@@ -20,7 +20,7 @@
 			<ul class="sliders-slider">
 				<?php foreach($page->children()->visible() as $subpage): ?>
 				<li>
-					<ul class="<?php echo $subpage->title() ?>">
+					<ul class="<?php echo $subpage->title() ?> project-slider">
 						<?php foreach($subpage->images() as $image): ?>
 						<li><img src="<?php echo $image->url() ?>" alt="<?php echo $subpage->title() ?>"></li>
 						<?php endforeach; ?>

@@ -93,6 +93,18 @@ main.projects {
 			}
 		}
 
+		.sliders-slider .slick-track > li {
+			position: relative;
+			height: calc(100vh - 5rem) !important;
+			bottom: 0;
+		}
+
+		.project-slider {
+			height: calc(100vh - 5rem) !important;
+			img {
+				@include center(vertical);
+			}
+		}
 
 	}
 

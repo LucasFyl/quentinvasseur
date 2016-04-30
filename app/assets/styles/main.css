@@ -1160,6 +1160,19 @@ main.projects .projects-gallery a.arrow.prev {
 main.projects .projects-gallery a.arrow.next {
   right: 3.5rem;
 }
+main.projects .projects-gallery .sliders-slider .slick-track > li {
+  position: relative;
+  height: calc(100vh - 5rem) !important;
+  bottom: 0;
+}
+main.projects .projects-gallery .project-slider {
+  height: calc(100vh - 5rem) !important;
+}
+main.projects .projects-gallery .project-slider img {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
 main.projects.sneakers .projects-nav ul li:before {
   content: none;
 }
