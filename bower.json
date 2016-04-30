@@ -1,6 +1,6 @@
 {
-  "name": "Irradié",
-  "homepage": "https://github.com/LucasFyl/irradie",
+  "name": "Quentin Vasseur",
+  "homepage": "https://github.com/LucasFyl",
   "authors": [
     "Lucas Fayolle <lfayolle1@gmail.com>"
   ],
@@ -25,6 +25,7 @@
     "gsap": "~1.18.1",
     "scrollmagic": "~2.0.5",
     "bourbon": "~4.2.6",
-    "neat": "~1.7.2"
+    "neat": "~1.7.2",
+    "slick-carousel": "^1.5.9"
   }
 }

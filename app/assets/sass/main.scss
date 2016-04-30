@@ -3,6 +3,7 @@
  // bower:scss
  @import "../../bower_components/bourbon/app/assets/stylesheets/_bourbon.scss";
  @import "../../bower_components/neat/app/assets/stylesheets/_neat.scss";
+ @import "../../bower_components/slick-carousel/slick/slick.scss";
  // endbower
 
 
@@ -18,6 +19,8 @@
  @import "_base/grid";
  @import "_base/font-face";
  @import "_base/type";
+ @import "_base/easings";
+ @import "_base/helpers";
 
  @import "_modules/header-footer";
  @import "_modules/general";

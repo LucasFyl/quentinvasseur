@@ -1,5 +1,6 @@
 
       <?= js('./bower_components/jquery/dist/jquery.js') ?>
+      <?= js('./bower_components/slick-carousel/slick/slick.js') ?>
       <?= js('assets/scripts/main.js') ?>
 
 
