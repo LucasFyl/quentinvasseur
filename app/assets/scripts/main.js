@@ -59,6 +59,7 @@ function hideMainLoader() {
 	var hideLoaderTl = new TimelineMax({paused:true});
 
 	hideLoaderTl
+		.set('body', {className:'+=locked'})
 		.set('header', {y:-100}).set('.toSubpage', {y:70,opacity:0})
 		.to('#loader .above', 0.5, {width: '34%', ease:Power3.easeIn})
 		.to('#loader .above', 0.5, {width: '55%', ease:Power3.easeOut})
@@ -69,6 +70,7 @@ function hideMainLoader() {
 		.to('.home-header', 0.75, {y:0, ease:Expo.easeOut})
 		.set('header', {y:0})
 		.staggerTo('.toSubpage', 0.5, {y:0, opacity:1, ease:Expo.easeOut}, 0.1)
+		.set('body', {className:'-=locked'})
 		.play();
 }
 function menuActive() {

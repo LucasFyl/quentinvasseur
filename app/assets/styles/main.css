@@ -1049,6 +1049,18 @@ body {
   width: 100%;
   position: relative;
 }
+body.locked {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+#pjax-container {
+  height: 100%;
+  width: 100%;
+  min-height: 100vh;
+  min-width: 100vw;
+}
 
 main {
   height: 100%;
@@ -1098,6 +1110,28 @@ main a.arrow.prev span {
 }
 main a.arrow.next {
   right: 3.5rem;
+}
+
+.btn {
+  display: inline-block;
+  position: relative;
+  padding: 1.9rem 4.5rem;
+  border: 2px solid #cacaca;
+  font-size: 1.5rem;
+  font-family: "GothamBold", helvetica, sans-serif;
+  font-weight: 800;
+  letter-spacing: .075rem;
+  text-align: center;
+  text-decoration: none;
+  background-color: transparent;
+}
+.btn.white {
+  color: white;
+  border-color: white;
+}
+.btn.white:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: background 0.75s cubic-bezier(0.39, 0.575, 0.565, 1);
 }
 
 #loader {
@@ -1165,8 +1199,72 @@ main.home > section .container h2 {
 }
 
 main.about {
+  min-height: calc(100vh - 5rem);
+  background: url(../images/asset-bg-about.jpg) no-repeat center center;
+  background-size: cover;
   color: white;
-  padding: 5rem;
+  padding: 5rem 5rem 0;
+}
+main.about:before {
+  content: " ";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.75);
+  transition: all 0.25s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+main.about:before {
+  z-index: -1;
+}
+main.about h1, main.about h2 {
+  text-align: center;
+}
+main.about h1 {
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+}
+main.about h2 {
+  letter-spacing: 1px;
+}
+main.about .description {
+  max-width: 80%;
+  display: block;
+  margin: 90px auto;
+  display: flex;
+  justify-content: space-around;
+}
+main.about .description::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+main.about .description span {
+  max-width: 46%;
+  padding-right: 1rem;
+}
+main.about .description p {
+  line-height: 1.5;
+  text-align: justify;
+}
+main.about .description h3 {
+  text-align: left;
+}
+main.about .cta {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 5rem;
+}
+main.about .cta a {
+  max-width: 46%;
+  margin-bottom: 0;
 }
 
 main.work {
@@ -1223,12 +1321,15 @@ main.work-details {
 main.work-details #work-gallery ul.slick-dots {
   width: 100%;
 }
+main.work-details #work-gallery .slick-list, main.work-details #work-gallery .slick-track {
+  max-height: calc(100vh - 5rem);
+}
 main.work-details #work-gallery .arrow.next {
-  top: calc(50% - 6rem);
+  top: calc(50% - 3rem);
   right: 5%;
 }
 main.work-details #work-gallery .arrow.prev {
-  top: calc(50% - 6rem);
+  top: calc(50% - 3rem);
   left: 5%;
 }
 main.work-details .close-gallery {

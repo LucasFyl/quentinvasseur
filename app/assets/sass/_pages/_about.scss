@@ -1,4 +1,56 @@
 main.about {
-  color: white;
-  padding: 5rem;
+	min-height: calc(100vh - 5rem);
+	background: url(../images/asset-bg-about.jpg) no-repeat center center;
+	background-size: cover;
+	@include overlay(rgba(0,0,0,0.75));
+	&:before { z-index: -1; }
+
+	color: white;
+	padding: 5rem 5rem 0;
+
+	h1, h2 {
+		text-align: center;
+	}
+    h1 {
+      margin: 0;padding: 0;
+      text-transform: uppercase;
+    }
+    h2 {
+      letter-spacing: 1px;
+    }
+    .description {
+        max-width: 80%;
+        display: block;
+        margin: 90px auto;
+
+        @include clearfix;
+    	display: flex;
+    	justify-content: space-around;
+
+        span {
+			max-width: 46%;
+			padding-right: 1rem;
+        }
+        p {
+          line-height: 1.5;
+          text-align: justify;
+        }
+        h3 {
+          text-align: left;
+        }
+    }
+
+    .cta {
+    	width: 80%;
+    	margin: 0 auto;
+    	display: flex;
+    	justify-content: space-around;
+    	margin-bottom: 5rem;
+
+    	a {
+    		max-width: 46%;
+    		margin-bottom: 0;
+    	}
+
+    }
 }
