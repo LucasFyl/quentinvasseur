@@ -1,3 +1,5 @@
+<?php snippet('loader') ?>
+
 <header class="home-header">
   <h1 class="logo"><a href="<?php echo $site->url() ?>">Quentin Vasseur</a></h1>
 </header>

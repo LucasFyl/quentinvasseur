@@ -1,6 +1,4 @@
-/*jshint -W117 */
-/*jslint latedef:false*/
-/* jshint unused:false */
+/*jshint ignore:start */
 var isMobile = false; //initiate as false
 
 $(document).ready(function(){
@@ -11,12 +9,6 @@ $(document).ready(function(){
 
  	var pageTransition = new TimelineMax({paused:true});
  	$('body').on('click', 'a.ajaxy', function (event) {
- 		// if( $('main.work').length ) {
-	 	// 	pageTransition.staggerTo('main.work > section', 0.5, {y:50,opacity:0, ease: Expo.easeIn}, 0.1).play();
-	  //       // console.log(pageTransition.duration());
-   //      }
-
-        // setTimeout(function(){
    			$.pjax({
 	            url: $(this).attr('href'),
 	            fragment: '#pjax-container',
@@ -24,9 +16,7 @@ $(document).ready(function(){
 	            complete: function (data) { // Want to do something else? Left here for reasons
 	            }
 	        });
-        // }, 800);
     	event.preventDefault();
-	    
     });
     $(document).on('pjax:start', function () {
         NProgress.start(); // Start the nprogress bar
@@ -55,17 +45,32 @@ function initPage(){
 	} 
 
 	if( !$('main').hasClass('home') ) {
+		// TweenMax.set('#loader' {display:'none'});
+		$('#loader').remove();
 		$('.home-header').hide();
 	} else {
+		hideMainLoader();
 		$('.home-header').show();
 	}
-
-	// } else if ( $('#content.work').length ) {
-	// } else if ( $('#content.about').length ) {
-	// } else if ( $('#content.contact').length ) {
-	// }
 }
+function hideMainLoader() {
+	'use strict';
 
+	var hideLoaderTl = new TimelineMax({paused:true});
+
+	hideLoaderTl
+		.set('header', {y:-100}).set('.toSubpage', {y:70,opacity:0})
+		.to('#loader .above', 0.5, {width: '34%', ease:Power3.easeIn})
+		.to('#loader .above', 0.5, {width: '55%', ease:Power3.easeOut})
+		.to('#loader .above', 0.5, {width: '78%', ease:Power3.easeOut})
+		.to('#loader .above', 0.75, {width: '100%', ease:Power3.easeIn})
+		.to('#loader .above, #loader .under', 0.5, {y:200, opacity:0, ease:Expo.easeIn})
+		.to('#loader', 1, {opacity:0, display:'none', ease:Power4.easeOut})
+		.to('.home-header', 0.75, {y:0, ease:Expo.easeOut})
+		.set('header', {y:0})
+		.staggerTo('.toSubpage', 0.5, {y:0, opacity:1, ease:Expo.easeOut}, 0.1)
+		.play();
+}
 function menuActive() {
     $('header .active').removeClass('active'); 
     var pgurl = window.location.href; 
@@ -166,3 +171,4 @@ function landingAnimHome() {
 
 	// setTimeout(function(){landingTl.play();}, 200);
 }
+/*jshint ignore:end */

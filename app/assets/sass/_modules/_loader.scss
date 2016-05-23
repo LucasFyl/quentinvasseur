@@ -1,0 +1,40 @@
+#loader {
+	$fsz: 6rem;
+	@include size(100%);
+	position: fixed;
+	z-index: 9999;
+	background:black;
+
+	.above, .under {
+		@include size(100%);
+		position: fixed;
+		top: 0;left: 0;
+
+		p {
+			text-align: center;
+			font-family: $loader-font;
+			font-size: $fsz;
+			line-height: $fsz;
+			margin: 0;
+
+			position: fixed;
+			width: 100vw;
+		}
+		> div {
+			@include center(vertical);
+		}
+	}
+
+	.above {
+		z-index: 9999;
+		overflow: hidden;
+		width: 0;
+		p { color: white; }
+	}
+	.under {
+		z-index: 9998;
+		p { color: rgba(255,255,255,0.4); }
+	}
+
+
+}

@@ -843,13 +843,17 @@ th {
 
 @font-face {
   font-family: 'GothamBold';
-  src: url("fonts/GothamBold.eot");
-  src: url("fonts/GothamBold.eot") format("embedded-opentype"), url("fonts/GothamBold.woff2") format("woff2"), url("fonts/GothamBold.woff") format("woff"), url("fonts/GothamBold.ttf") format("truetype"), url("fonts/GothamBold.svg#GothamBold") format("svg");
+  src: url("../fonts/GothamBold.eot");
+  src: url("../fonts/GothamBold.eot") format("embedded-opentype"), url("../fonts/GothamBold.woff2") format("woff2"), url("../fonts/GothamBold.woff") format("woff"), url("../fonts/GothamBold.ttf") format("truetype"), url("fonts/GothamBold.svg#GothamBold") format("svg");
+}
+@font-face {
+  font-family: 'EthnocentricRg';
+  src: url("../fonts/ethnocentricrg.eot"), url("../fonts/ethnocentricrg.woff") format("woff"), url("../fonts/ethnocentricrg.svg") format("svg");
 }
 @font-face {
   font-family: 'GothamBook';
-  src: url("../assets/fonts/GothamBook.eot");
-  src: url("../assets/fonts/GothamBook.eot") format("embedded-opentype"), url("../assets/fonts/GothamBook.woff2") format("woff2"), url("../assets/fonts/GothamBook.woff") format("woff"), url("../assets/fonts/GothamBook.ttf") format("truetype"), url("../assets/fonts/GothamBook.svg#GothamBook") format("svg");
+  src: url("../fonts/GothamBook.eot");
+  src: url("../fonts/GothamBook.eot") format("embedded-opentype"), url("../fonts/GothamBook.woff2") format("woff2"), url("../fonts/GothamBook.woff") format("woff"), url("../fonts/GothamBook.ttf") format("truetype"), url("../fonts/GothamBook.svg#GothamBook") format("svg");
 }
 /**
  * Base styles ~ Type
@@ -1094,6 +1098,49 @@ main a.arrow.prev span {
 }
 main a.arrow.next {
   right: 3.5rem;
+}
+
+#loader {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 9999;
+  background: black;
+}
+#loader .above, #loader .under {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+#loader .above p, #loader .under p {
+  text-align: center;
+  font-family: "EthnocentricRg", helvetica, sans-serif;
+  font-size: 6rem;
+  line-height: 6rem;
+  margin: 0;
+  position: fixed;
+  width: 100vw;
+}
+#loader .above > div, #loader .under > div {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+#loader .above {
+  z-index: 9999;
+  overflow: hidden;
+  width: 0;
+}
+#loader .above p {
+  color: white;
+}
+#loader .under {
+  z-index: 9998;
+}
+#loader .under p {
+  color: rgba(255, 255, 255, 0.4);
 }
 
 main.home > section {
