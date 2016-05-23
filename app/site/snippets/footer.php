@@ -1,7 +1,12 @@
 
       <?= js('/bower_components/jquery/dist/jquery.js') ?>
       <?= js('/bower_components/slick-carousel/slick/slick.js') ?>
+      <?= js('/bower_components/jquery-pjax/jquery.pjax.js') ?>
+      <?= js('/bower_components/nprogress/nprogress.js') ?>
+      <?= js('/bower_components/gsap/src/minified/TweenMax.min.js') ?>
+
       <?= js('assets/scripts/main.js') ?>
+      <?= js('assets/scripts/navigation.js') ?>
 
 
       <!-- build:remove -->

@@ -2,6 +2,7 @@
 
 <?php snippet('header') ?>
 
+<div id="pjax-container">
 	<main role="main" class="main projects <?php echo $page->id() ?>">
 	
 		<aside class="projects-nav">
@@ -32,5 +33,5 @@
 		</div>			
 
 	</main>
-
+</div>
 <?php snippet('footer') ?>

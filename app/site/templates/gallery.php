@@ -1,10 +1,17 @@
 <?php snippet('head') ?>
+<?php snippet('header') ?>
 
-  <h1><?php echo $page->title() ?></h1>
+<div id="pjax-container">
 
-  <?php foreach($page->images()->sortBy('asc') as $image): ?>
-    <img src="<?php echo $image->url() ?>" alt="<?php echo $image->title() ?>" />
-  <?php endforeach; ?>
+  <main class="main work-details" role="main">
+	<div id="work-gallery">
+		<?php foreach($page->images()->not('cover.jpg') as $image): ?>
+	    <img src="<?php echo $image->url() ?>" alt="<?php echo $image->title() ?>" />
+	  	<?php endforeach; ?>	
+	</div>
+	<a href="./" class="ajaxy close-gallery">Close gallery</a>
+  </main>
 
+</div>
 
 <?php snippet('footer') ?>

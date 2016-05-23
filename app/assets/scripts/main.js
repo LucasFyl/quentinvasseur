@@ -8,6 +8,34 @@ $(document).ready(function(){
 
  	initPage();
  	window.onresize = resize;
+
+ 	var pageTransition = new TimelineMax({paused:true});
+ 	$('body').on('click', 'a.ajaxy', function (event) {
+ 		// if( $('main.work').length ) {
+	 	// 	pageTransition.staggerTo('main.work > section', 0.5, {y:50,opacity:0, ease: Expo.easeIn}, 0.1).play();
+	  //       // console.log(pageTransition.duration());
+   //      }
+
+        // setTimeout(function(){
+   			$.pjax({
+	            url: $(this).attr('href'),
+	            fragment: '#pjax-container',
+	            container: '#pjax-container',
+	            complete: function (data) { // Want to do something else? Left here for reasons
+	            }
+	        });
+        // }, 800);
+    	event.preventDefault();
+	    
+    });
+    $(document).on('pjax:start', function () {
+        NProgress.start(); // Start the nprogress bar
+    });
+    $(document).on('pjax:end', function () {
+        NProgress.done(); // End the nprogress bar
+    	initPage();
+        // menuActive(); // Update the "active" class on links after ajax call
+    });
  });
 
 // Page load event
@@ -16,14 +44,37 @@ function initPage(){
 
 	// detectMobile();
 	// hideLoader();
+	menuActive();
 
 	if ( $('main.projects').length ) {
 		initProjectsPage();
+	} 
+
+	if ( $('main.work-details').length ) {
+		initWorkDetailsPage();
+	} 
+
+	if( !$('main').hasClass('home') ) {
+		$('.home-header').hide();
+	} else {
+		$('.home-header').show();
 	}
+
 	// } else if ( $('#content.work').length ) {
 	// } else if ( $('#content.about').length ) {
 	// } else if ( $('#content.contact').length ) {
 	// }
+}
+
+function menuActive() {
+    $('header .active').removeClass('active'); 
+    var pgurl = window.location.href; 
+
+    $("nav a").each(function () {
+        if ($(this).attr("href") == pgurl || $(this).attr("href") == '') { 
+            $(this).addClass("active"); 
+        }
+    });
 }
 function initProjectsPage() {
 	'use strict';
@@ -46,8 +97,8 @@ function initProjectsPage() {
 		speed: 1000,
 		fade: true,
 		autoplaySpeed: 4000,
-		prevArrow: '<a href="#" class="arrow prev"><span>Prev Slide</span></a>',
-		nextArrow: '<a href="#" class="arrow next"><span>Next Slide</span></a>'
+		prevArrow: '<a class="arrow prev"><span>Prev Slide</span></a>',
+		nextArrow: '<a class="arrow next"><span>Next Slide</span></a>'
 	});
 	$('.projects-nav ul').slick({
 		slidesToShow: 40,
@@ -57,41 +108,20 @@ function initProjectsPage() {
 		centerMode: false,
 		focusOnSelect: true
 	});
+}
+function initWorkDetailsPage() {
+	var gallery = $('#work-gallery');
 
-
-	// // set first item as active
-	// mainNav.find('li:first-child').addClass('active');
-	// gallery.find('ul:first-child').addClass('active');
-
-	// mainNav.on('click', 'li', function(){
-	// 	mainNav.find('li').removeClass('active');
-	// 	$(this).addClass('active');
-
-	// 	var str1 = $(this).find('h3').text();
-	// 	console.log(str1);
-	// 	// var str2 = $('.projects-gallery ul').map(function () {
-	// 	// 			    return $(this).attr('class');
-	// 	// 			}).get();
-	// 	// console.log(str1, str2)	;
-
-	// 	// if ( str1.search(str2) != -1 ) {
-	// 	// 	alert('match!');
-	// 	// }
-	// 	// sttr1.search(str2); // returns -1 if false
-	// });
-
-
-	// $('.projects-gallery ul').each(function(){
-	// 	var _this = $(this);
-
-	// 	_this.slick({
-	// 	  arrows: true,
-	// 	  dots: false,
-	// 	  fade: true,
-	// 	  autoplay: true
-	// 	});
-
-	// });
+	gallery.slick({
+		arrows: true, 
+		prevArrow: '<a class="arrow prev"><span>Prev Slide</span></a>',
+		nextArrow: '<a class="arrow next"><span>Next Slide</span></a>',
+		dots: true, 
+		autoplay: true, 
+		speed: 500,
+		fade: true
+		// cssEase: 'cubic-bezier(0.19, 1, 0.22, 1)'
+	});
 }
 function detectMobile(){
 	'use strict';
